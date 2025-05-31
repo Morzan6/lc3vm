@@ -14,7 +14,7 @@ TEST_MAIN_SRC = src/main.cpp
 
 all: $(BUILD_DIR)/lc3vm
 
-$(BUILD_DIR)/lc3vm: $(VM_TEST_SRCS) src/main.cpp # main.cpp contains the actual main for the VM
+$(BUILD_DIR)/lc3vm: $(VM_TEST_SRCS) src/main.cpp
 	mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) $(VM_TEST_SRCS) src/main.cpp -o $(BUILD_DIR)/lc3vm
 
