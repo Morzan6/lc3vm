@@ -33,3 +33,32 @@ jobs:
     - name: Run tests
       working-directory: ./lc3vm
       run: make test 
+
+  deploy-docs:
+    needs: build_and_test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' # Deploy only on push to main
+    permissions:
+      contents: write 
+      pages: write    
+      id-token: write 
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Doxygen and Graphviz
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y doxygen graphviz
+
+    - name: Build Doxygen Documentation
+      working-directory: ./lc3vm
+      run: |
+        doxygen Doxyfile
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/html
