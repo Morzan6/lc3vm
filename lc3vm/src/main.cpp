@@ -1,11 +1,28 @@
+/**
+ * @file main.cpp
+ * @brief Main entry point for the LC-3 virtual machine.
+ * 
+ * This program loads one or more LC-3 object files into the VM's memory
+ * and starts execution. It also handles SIGINT for graceful shutdown.
+ */
 #include <iostream>
 #include <string>
 #include <vector>
 #include <csignal>
 #include "lc3.hpp"
 
+/** 
+ * @brief Global pointer to the LC3State instance.
+ * Used by the signal handler to request the VM to halt.
+ * This is null when no VM is active.
+ */
 LC3State* g_vm_ptr = nullptr;
 
+/**
+ * @brief Signal handler for SIGINT (Ctrl+C).
+ * Requests the LC-3 VM to halt its execution gracefully.
+ * @param sig The signal number (expected to be SIGINT).
+ */
 void handle_sigint(int sig) {
     if (sig == SIGINT) {
         std::cerr << "\nInterrupt signal received. Halting VM..." << std::endl;
@@ -15,6 +32,17 @@ void handle_sigint(int sig) {
     }
 }
 
+/**
+ * @brief Main function for the LC-3 virtual machine.
+ * 
+ * Parses command-line arguments for LC-3 object image files, loads them into
+ * the VM, sets up a SIGINT handler, and runs the VM.
+ * @param argc The number of command-line arguments.
+ * @param argv An array of C-style strings representing the command-line arguments.
+ *             The first argument (argv[0]) is the program name.
+ *             Subsequent arguments (argv[1]...) are paths to LC-3 object files.
+ * @return 0 on successful execution and halt, 1 on error (e.g., file not found, runtime error).
+ */
 int main(int argc, const char* argv[]) {
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <image_file1> [image_file2] ..." << std::endl;

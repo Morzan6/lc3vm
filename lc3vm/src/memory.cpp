@@ -1,3 +1,10 @@
+/**
+ * @file memory.cpp
+ * @brief Implements the Memory class methods for the LC-3 virtual machine.
+ * 
+ * This file contains the definitions for memory read and write operations,
+ * including handling for memory-mapped keyboard input.
+ */
 #include "memory.hpp"
 #include "keyboard.hpp"
 #include <sys/select.h>

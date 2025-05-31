@@ -1,3 +1,10 @@
+/**
+ * @file ls3.cpp
+ * @brief Implements the LC3State class methods for the LC-3 virtual machine.
+ * 
+ * This file contains the definitions for the LC-3 instruction set, trap handlers,
+ * program loading, and the main execution loop of the LC-3 VM.
+ */
 #include <string>
 #include <fstream>
 #include <stdexcept>
@@ -12,6 +19,12 @@
 #include "traps.hpp"
 #include "flags.hpp"
 
+/**
+ * @brief Swaps the endianness of a 16-bit unsigned integer.
+ * Useful for reading LC-3 object files which are typically big-endian.
+ * @param x The 16-bit value to swap.
+ * @return The endian-swapped 16-bit value.
+ */
 static std::uint16_t swap16(std::uint16_t x) {
     return (x << 8) | (x >> 8);
 }
