@@ -1,8 +1,23 @@
 var searchData=
 [
-  ['set_5fregister_5fvalue_0',['set_register_value',['../classLC3State.html#a8fd497660b25ad775b356f2cdc6d18d1',1,'LC3State']]],
-  ['sign_5fextend_1',['sign_extend',['../classLC3State.html#a91ce6448756aaf9d39685c837b770b37',1,'LC3State']]],
-  ['statusflags_2',['StatusFlags',['../flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81',1,'flags.hpp']]],
-  ['step_3',['step',['../classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466',1,'LC3State']]],
-  ['swap16_4',['swap16',['../ls3_8cpp.html#a04f98d69da841663dfb280b41501b22a',1,'ls3.cpp']]]
+  ['op_5fadd_0',['OP_ADD',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8',1,'opcodes.hpp']]],
+  ['op_5fand_1',['OP_AND',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18',1,'opcodes.hpp']]],
+  ['op_5fbr_2',['OP_BR',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64',1,'opcodes.hpp']]],
+  ['op_5fjmp_3',['OP_JMP',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b',1,'opcodes.hpp']]],
+  ['op_5fjsr_4',['OP_JSR',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834',1,'opcodes.hpp']]],
+  ['op_5fld_5',['OP_LD',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0',1,'opcodes.hpp']]],
+  ['op_5fldi_6',['OP_LDI',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1',1,'opcodes.hpp']]],
+  ['op_5fldr_7',['OP_LDR',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23',1,'opcodes.hpp']]],
+  ['op_5flea_8',['OP_LEA',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b',1,'opcodes.hpp']]],
+  ['op_5fnot_9',['OP_NOT',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1',1,'opcodes.hpp']]],
+  ['op_5fres_10',['OP_RES',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f',1,'opcodes.hpp']]],
+  ['op_5frti_11',['OP_RTI',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b',1,'opcodes.hpp']]],
+  ['op_5fst_12',['OP_ST',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46',1,'opcodes.hpp']]],
+  ['op_5fsti_13',['OP_STI',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44',1,'opcodes.hpp']]],
+  ['op_5fstr_14',['OP_STR',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba',1,'opcodes.hpp']]],
+  ['op_5ftable_15',['op_table',['../classLC3State.html#aca3408b7063677c8e3c693cb57fa3e82',1,'LC3State']]],
+  ['op_5ftrap_16',['OP_TRAP',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f',1,'opcodes.hpp']]],
+  ['opcodes_17',['Opcodes',['../opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cac',1,'opcodes.hpp']]],
+  ['opcodes_2ehpp_18',['opcodes.hpp',['../opcodes_8hpp.html',1,'']]],
+  ['overview_19',['Overview',['../index.html#autotoc_md1',1,'']]]
 ];

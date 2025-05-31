@@ -1,5 +1,5 @@
 <map id="LC3State::write_memory" name="LC3State::write_memory">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,188,31"/>
-<area shape="rect" id="Node000002" href="$classMemory.html#a91cc7ffdaff15bea4ae692dccc9d6959" title=" " alt="" coords="236,5,352,31"/>
+<area shape="rect" id="Node000001" title="Writes a value to a specified memory address. Used for testing purposes." alt="" coords="5,5,188,31"/>
+<area shape="rect" id="Node000002" href="$classMemory.html#a91cc7ffdaff15bea4ae692dccc9d6959" title="Writes a 16&#45;bit word to the specified memory address." alt="" coords="236,5,352,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,15,222,15,222,21,188,21"/>
 </map>

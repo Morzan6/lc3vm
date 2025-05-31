@@ -98,23 +98,31 @@ $(document).ready(function(){initNavTree('classMemory.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 
+<p>Represents the memory unit of the LC-3 VM.  
+ <a href="classMemory.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="memory_8hpp_source.html">memory.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7d7c6287a71c0c5c1bab82423d1de6d0" id="r_a7d7c6287a71c0c5c1bab82423d1de6d0"><td class="memItemLeft" align="right" valign="top">std::uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a7d7c6287a71c0c5c1bab82423d1de6d0">read</a> (std::uint16_t address)</td></tr>
+<tr class="memdesc:a7d7c6287a71c0c5c1bab82423d1de6d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a 16-bit word from the specified memory address. Handles memory-mapped I/O for keyboard status (MR_KBSR) and data (MR_KBDR) registers.  <br /></td></tr>
 <tr class="separator:a7d7c6287a71c0c5c1bab82423d1de6d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91cc7ffdaff15bea4ae692dccc9d6959" id="r_a91cc7ffdaff15bea4ae692dccc9d6959"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a91cc7ffdaff15bea4ae692dccc9d6959">write</a> (std::uint16_t address, std::uint16_t value)</td></tr>
+<tr class="memdesc:a91cc7ffdaff15bea4ae692dccc9d6959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a 16-bit word to the specified memory address.  <br /></td></tr>
 <tr class="separator:a91cc7ffdaff15bea4ae692dccc9d6959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a200e490115fdbd348b424ac5750ab67a" id="r_a200e490115fdbd348b424ac5750ab67a"><td class="memItemLeft" align="right" valign="top">std::uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a> [<a class="el" href="memory_8hpp.html#a6e67afdf54514977b8dd746e995c2c86">MEMORY_MAX</a>]</td></tr>
+<tr class="memdesc:a200e490115fdbd348b424ac5750ab67a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main memory array. Stores 65536 16-bit words.  <br /></td></tr>
 <tr class="separator:a200e490115fdbd348b424ac5750ab67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00007">7</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
+<div class="textblock"><p>Represents the memory unit of the LC-3 VM. </p>
+<p>This class manages the 65536 x 16-bit word addressable memory space. It provides methods for reading from and writing to memory, and handles memory-mapped I/O like keyboard status and data registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00020">20</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7d7c6287a71c0c5c1bab82423d1de6d0" name="a7d7c6287a71c0c5c1bab82423d1de6d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d7c6287a71c0c5c1bab82423d1de6d0">&#9670;&#160;</a></span>read()</h2>
@@ -132,34 +140,44 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memory_8cpp_source.html#l00025">25</a> of file <a class="el" href="memory_8cpp_source.html">memory.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>                                            {</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (address == <a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">Keyboard::MR_KBSR</a>) {</div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="memory_8cpp.html#a1823ce2f43d6adf3b167c5f75837eb93">check_key</a>()) {</div>
-<div class="line"><span class="lineno">   28</span>            <a class="code hl_variable" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a>[<a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">Keyboard::MR_KBSR</a>] = (1 &lt;&lt; 15);</div>
-<div class="line"><span class="lineno">   29</span>            <span class="keywordtype">char</span> c_in;</div>
-<div class="line"><span class="lineno">   30</span>            std::cin.get(c_in);</div>
-<div class="line"><span class="lineno">   31</span>            <a class="code hl_variable" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a>[<a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52">Keyboard::MR_KBDR</a>] = <span class="keyword">static_cast&lt;</span>std::uint16_t<span class="keyword">&gt;</span>(c_in);</div>
-<div class="line"><span class="lineno">   32</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   33</span>            <a class="code hl_variable" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a>[<a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">Keyboard::MR_KBSR</a>] = 0;</div>
-<div class="line"><span class="lineno">   34</span>        }</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a>[address];</div>
-<div class="line"><span class="lineno">   37</span>}</div>
-<div class="ttc" id="aclassMemory_html_a200e490115fdbd348b424ac5750ab67a"><div class="ttname"><a href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">Memory::memory</a></div><div class="ttdeci">std::uint16_t memory[MEMORY_MAX]</div><div class="ttdef"><b>Definition</b> <a href="memory_8hpp_source.html#l00009">memory.hpp:9</a></div></div>
-<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52">MR_KBDR</a></div><div class="ttdeci">@ MR_KBDR</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00009">keyboard.hpp:9</a></div></div>
-<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">MR_KBSR</a></div><div class="ttdeci">@ MR_KBSR</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00008">keyboard.hpp:8</a></div></div>
-<div class="ttc" id="amemory_8cpp_html_a1823ce2f43d6adf3b167c5f75837eb93"><div class="ttname"><a href="memory_8cpp.html#a1823ce2f43d6adf3b167c5f75837eb93">check_key</a></div><div class="ttdeci">std::uint16_t check_key()</div><div class="ttdef"><b>Definition</b> <a href="memory_8cpp_source.html#l00014">memory.cpp:14</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="memory_8cpp_source.html#l00014">check_key()</a>, <a class="el" href="memory_8hpp_source.html#l00009">memory</a>, <a class="el" href="keyboard_8hpp_source.html#l00009">MR_KBDR</a>, and <a class="el" href="keyboard_8hpp_source.html#l00008">MR_KBSR</a>.</p>
+<p>Reads a 16-bit word from the specified memory address. Handles memory-mapped I/O for keyboard status (MR_KBSR) and data (MR_KBDR) registers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>The 16-bit memory address to read from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The 16-bit value stored at the given address. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">MR_KBSR</a>, <a class="el" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52">MR_KBDR</a> </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="ls3_8cpp_source.html#l00020">LC3State::ins()</a>, <a class="el" href="lc3_8hpp_source.html#l00048">LC3State::read_memory()</a>, and <a class="el" href="ls3_8cpp_source.html#l00242">LC3State::step()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_8cpp_source.html#l00032">32</a> of file <a class="el" href="memory_8cpp_source.html">memory.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>                                            {</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (address == <a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">Keyboard::MR_KBSR</a>) {</div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="memory_8cpp.html#a1823ce2f43d6adf3b167c5f75837eb93">check_key</a>()) {</div>
+<div class="line"><span class="lineno">   35</span>            <a class="code hl_variable" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a>[<a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">Keyboard::MR_KBSR</a>] = (1 &lt;&lt; 15);</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordtype">char</span> c_in;</div>
+<div class="line"><span class="lineno">   37</span>            std::cin.get(c_in);</div>
+<div class="line"><span class="lineno">   38</span>            <a class="code hl_variable" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a>[<a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52">Keyboard::MR_KBDR</a>] = <span class="keyword">static_cast&lt;</span>std::uint16_t<span class="keyword">&gt;</span>(c_in);</div>
+<div class="line"><span class="lineno">   39</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   40</span>            <a class="code hl_variable" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a>[<a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">Keyboard::MR_KBSR</a>] = 0;</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a>[address];</div>
+<div class="line"><span class="lineno">   44</span>}</div>
+<div class="ttc" id="aclassMemory_html_a200e490115fdbd348b424ac5750ab67a"><div class="ttname"><a href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">Memory::memory</a></div><div class="ttdeci">std::uint16_t memory[MEMORY_MAX]</div><div class="ttdoc">The main memory array. Stores 65536 16-bit words.</div><div class="ttdef"><b>Definition</b> <a href="memory_8hpp_source.html#l00026">memory.hpp:26</a></div></div>
+<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52">MR_KBDR</a></div><div class="ttdeci">@ MR_KBDR</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00016">keyboard.hpp:16</a></div></div>
+<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">MR_KBSR</a></div><div class="ttdeci">@ MR_KBSR</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00015">keyboard.hpp:15</a></div></div>
+<div class="ttc" id="amemory_8cpp_html_a1823ce2f43d6adf3b167c5f75837eb93"><div class="ttname"><a href="memory_8cpp.html#a1823ce2f43d6adf3b167c5f75837eb93">check_key</a></div><div class="ttdeci">std::uint16_t check_key()</div><div class="ttdef"><b>Definition</b> <a href="memory_8cpp_source.html#l00021">memory.cpp:21</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="memory_8cpp_source.html#l00021">check_key()</a>, <a class="el" href="memory_8hpp_source.html#l00026">memory</a>, <a class="el" href="keyboard_8hpp_source.html#l00016">MR_KBDR</a>, and <a class="el" href="keyboard_8hpp_source.html#l00015">MR_KBSR</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ls3_8cpp_source.html#l00033">LC3State::ins()</a>, <a class="el" href="lc3_8hpp_source.html#l00142">LC3State::read_memory()</a>, and <a class="el" href="ls3_8cpp_source.html#l00255">LC3State::step()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_cgraph.png" border="0" usemap="#aclassMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_cgraph" alt=""/></div>
 <map name="aclassMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_cgraph" id="aclassMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,117,31"/>
+<area shape="rect" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="5,5,117,31"/>
 <area shape="rect" href="memory_8cpp.html#a1823ce2f43d6adf3b167c5f75837eb93" title=" " alt="" coords="165,5,256,31"/>
 <area shape="poly" title=" " alt="" coords="118,15,151,15,151,21,118,21"/>
 </map>
@@ -169,21 +187,21 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_icgraph.png" border="0" usemap="#aclassMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_icgraph" alt=""/></div>
 <map name="aclassMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_icgraph" id="aclassMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_icgraph">
-<area shape="rect" title=" " alt="" coords="765,107,877,132"/>
-<area shape="rect" href="classLC3State.html#a608043abe659369b614216e26c63aae1" title=" " alt="" coords="575,56,681,81"/>
+<area shape="rect" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="765,107,877,132"/>
+<area shape="rect" href="classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="575,56,681,81"/>
 <area shape="poly" title=" " alt="" coords="758,106,677,84,678,79,760,101"/>
-<area shape="rect" href="classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title=" " alt="" coords="347,107,463,132"/>
+<area shape="rect" href="classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="347,107,463,132"/>
 <area shape="poly" title=" " alt="" coords="752,122,463,122,463,117,752,117"/>
-<area shape="rect" href="classLC3State.html#ab42c2aeb6d3b5f10503a42bd22a58979" title=" " alt="" coords="539,157,717,183"/>
+<area shape="rect" href="classLC3State.html#ab42c2aeb6d3b5f10503a42bd22a58979" title="Reads a value from a specified memory address. Used for testing purposes." alt="" coords="539,157,717,183"/>
 <area shape="poly" title=" " alt="" coords="760,138,678,160,677,155,758,133"/>
-<area shape="rect" href="classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title=" " alt="" coords="320,5,491,31"/>
+<area shape="rect" href="classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title="Disassembles the instruction at a given memory address. (Currently not implemented)" alt="" coords="320,5,491,31"/>
 <area shape="poly" title=" " alt="" coords="561,56,461,33,462,28,562,51"/>
-<area shape="rect" href="classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title=" " alt="" coords="108,57,272,83"/>
+<area shape="rect" href="classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="108,57,272,83"/>
 <area shape="poly" title=" " alt="" coords="561,72,272,72,272,67,561,66"/>
 <area shape="poly" title=" " alt="" coords="562,86,462,109,461,104,561,81"/>
-<area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title=" " alt="" coords="5,83,60,108"/>
+<area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,83,60,108"/>
 <area shape="poly" title=" " alt="" coords="98,88,60,94,60,88,97,82"/>
-<area shape="rect" href="classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title=" " alt="" coords="135,107,245,132"/>
+<area shape="rect" href="classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="135,107,245,132"/>
 <area shape="poly" title=" " alt="" coords="334,122,245,122,245,117,334,117"/>
 <area shape="poly" title=" " alt="" coords="121,112,60,102,61,97,122,106"/>
 </map>
@@ -217,34 +235,43 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memory_8cpp_source.html#l00009">9</a> of file <a class="el" href="memory_8cpp_source.html">memory.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>                                                         {</div>
-<div class="line"><span class="lineno">   10</span>    <a class="code hl_variable" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a>[address] = value;</div>
-<div class="line"><span class="lineno">   11</span>}</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="memory_8hpp_source.html#l00009">memory</a>.</p>
+<p>Writes a 16-bit word to the specified memory address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>The 16-bit memory address to write to. </td></tr>
+    <tr><td class="paramname">value</td><td>The 16-bit value to write. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">Referenced by <a class="el" href="ls3_8cpp_source.html#l00020">LC3State::ins()</a>, <a class="el" href="ls3_8cpp_source.html#l00199">LC3State::load_image()</a>, and <a class="el" href="lc3_8hpp_source.html#l00045">LC3State::write_memory()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_8cpp_source.html#l00016">16</a> of file <a class="el" href="memory_8cpp_source.html">memory.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>                                                         {</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="classMemory.html#a200e490115fdbd348b424ac5750ab67a">memory</a>[address] = value;</div>
+<div class="line"><span class="lineno">   18</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="memory_8hpp_source.html#l00026">memory</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ls3_8cpp_source.html#l00033">LC3State::ins()</a>, <a class="el" href="ls3_8cpp_source.html#l00212">LC3State::load_image()</a>, and <a class="el" href="lc3_8hpp_source.html#l00133">LC3State::write_memory()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemory_a91cc7ffdaff15bea4ae692dccc9d6959_icgraph.png" border="0" usemap="#aclassMemory_a91cc7ffdaff15bea4ae692dccc9d6959_icgraph" alt=""/></div>
 <map name="aclassMemory_a91cc7ffdaff15bea4ae692dccc9d6959_icgraph" id="aclassMemory_a91cc7ffdaff15bea4ae692dccc9d6959_icgraph">
-<area shape="rect" title=" " alt="" coords="715,104,831,129"/>
-<area shape="rect" href="classLC3State.html#a608043abe659369b614216e26c63aae1" title=" " alt="" coords="522,53,629,79"/>
+<area shape="rect" title="Writes a 16&#45;bit word to the specified memory address." alt="" coords="715,104,831,129"/>
+<area shape="rect" href="classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="522,53,629,79"/>
 <area shape="poly" title=" " alt="" coords="709,103,625,81,626,76,710,98"/>
-<area shape="rect" href="classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title=" " alt="" coords="269,104,433,129"/>
+<area shape="rect" href="classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="269,104,433,129"/>
 <area shape="poly" title=" " alt="" coords="701,119,433,119,433,114,701,114"/>
-<area shape="rect" href="classLC3State.html#a03f66a08f089d8f6cea1f1f62a3463ce" title=" " alt="" coords="484,155,667,180"/>
+<area shape="rect" href="classLC3State.html#a03f66a08f089d8f6cea1f1f62a3463ce" title="Writes a value to a specified memory address. Used for testing purposes." alt="" coords="484,155,667,180"/>
 <area shape="poly" title=" " alt="" coords="710,135,626,157,625,152,709,130"/>
-<area shape="rect" href="classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title=" " alt="" coords="265,55,436,80"/>
+<area shape="rect" href="classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title="Disassembles the instruction at a given memory address. (Currently not implemented)" alt="" coords="265,55,436,80"/>
 <area shape="poly" title=" " alt="" coords="508,69,436,69,436,64,508,64"/>
 <area shape="poly" title=" " alt="" coords="509,84,408,107,407,101,508,78"/>
-<area shape="rect" href="classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title=" " alt="" coords="293,5,409,31"/>
+<area shape="rect" href="classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="293,5,409,31"/>
 <area shape="poly" title=" " alt="" coords="508,55,408,33,409,28,509,49"/>
-<area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title=" " alt="" coords="5,55,60,80"/>
+<area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,55,60,80"/>
 <area shape="poly" title=" " alt="" coords="255,105,60,74,61,69,255,99"/>
-<area shape="rect" href="classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title=" " alt="" coords="108,17,217,43"/>
+<area shape="rect" href="classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="108,17,217,43"/>
 <area shape="poly" title=" " alt="" coords="279,25,218,29,217,24,278,20"/>
 <area shape="poly" title=" " alt="" coords="106,49,61,62,59,57,104,44"/>
 </map>
@@ -265,9 +292,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00009">9</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
+<p>The main memory array. Stores 65536 16-bit words. </p>
 
-<p class="reference">Referenced by <a class="el" href="memory_8cpp_source.html#l00025">read()</a>, and <a class="el" href="memory_8cpp_source.html#l00009">write()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00026">26</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="memory_8cpp_source.html#l00032">read()</a>, and <a class="el" href="memory_8cpp_source.html#l00016">write()</a>.</p>
 
 </div>
 </div>

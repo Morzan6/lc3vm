@@ -1,5 +1,5 @@
 <map id="Memory::read" name="Memory::read">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,117,31"/>
+<area shape="rect" id="Node000001" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="5,5,117,31"/>
 <area shape="rect" id="Node000002" href="$memory_8cpp.html#a1823ce2f43d6adf3b167c5f75837eb93" title=" " alt="" coords="165,5,256,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,15,151,15,151,21,118,21"/>
 </map>

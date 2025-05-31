@@ -95,18 +95,21 @@ $(document).ready(function(){initNavTree('flags_8hpp.html',''); initResizable();
   <div class="headertitle"><div class="title">flags.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines the condition flags for the LC-3 VM.  
+<a href="#details">More...</a></p>
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="flags_8hpp__dep__incl.png" border="0" usemap="#aflags_8hppdep" alt=""/></div>
 <map name="aflags_8hppdep" id="aflags_8hppdep">
-<area shape="rect" title=" " alt="" coords="35,5,116,31"/>
-<area shape="rect" href="lc3_8hpp.html" title=" " alt="" coords="77,79,146,104"/>
+<area shape="rect" title="Defines the condition flags for the LC&#45;3 VM." alt="" coords="35,5,116,31"/>
+<area shape="rect" href="lc3_8hpp.html" title="Defines the main LC3State class for the LC&#45;3 virtual machine." alt="" coords="77,79,146,104"/>
 <area shape="poly" title=" " alt="" coords="90,42,108,77,103,80,85,44"/>
-<area shape="rect" href="ls3_8cpp.html" title=" " alt="" coords="5,152,73,177"/>
+<area shape="rect" href="ls3_8cpp.html" title="Implements the LC3State class methods for the LC&#45;3 virtual machine." alt="" coords="5,152,73,177"/>
 <area shape="poly" title=" " alt="" coords="72,45,45,152,40,151,67,44"/>
 <area shape="poly" title=" " alt="" coords="91,116,53,154,49,150,88,112"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="98,152,181,177"/>
+<area shape="rect" href="main_8cpp.html" title="Main entry point for the LC&#45;3 virtual machine." alt="" coords="98,152,181,177"/>
 <area shape="poly" title=" " alt="" coords="123,116,137,151,132,153,119,118"/>
 </map>
 </div>
@@ -119,9 +122,14 @@ Enumerations</h2></td></tr>
 , <a class="el" href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7">FL_ZRO</a> = 1 &lt;&lt; 1
 , <a class="el" href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62">FL_NEG</a> = 1 &lt;&lt; 2
  }</td></tr>
+<tr class="memdesc:ac07b406ff87cafb1d2cd8356995f5f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for LC-3 condition flags. These flags are set by arithmetic and logical operations.  <a href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81">More...</a><br /></td></tr>
 <tr class="separator:ac07b406ff87cafb1d2cd8356995f5f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines the condition flags for the LC-3 VM. </p>
+
+<p class="definition">Definition in file <a class="el" href="flags_8hpp_source.html">flags.hpp</a>.</p>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ac07b406ff87cafb1d2cd8356995f5f81" name="ac07b406ff87cafb1d2cd8356995f5f81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac07b406ff87cafb1d2cd8356995f5f81">&#9670;&#160;</a></span>StatusFlags</h2>
 
@@ -133,21 +141,26 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumeration for LC-3 condition flags. These flags are set by arithmetic and logical operations. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac07b406ff87cafb1d2cd8356995f5f81a92e2f7208f90a8ea28190bba203ee66f" name="ac07b406ff87cafb1d2cd8356995f5f81a92e2f7208f90a8ea28190bba203ee66f"></a>FL_POS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7" name="ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7"></a>FL_ZRO&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62" name="ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62"></a>FL_NEG&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac07b406ff87cafb1d2cd8356995f5f81a92e2f7208f90a8ea28190bba203ee66f" name="ac07b406ff87cafb1d2cd8356995f5f81a92e2f7208f90a8ea28190bba203ee66f"></a>FL_POS&#160;</td><td class="fielddoc"><p>Positive condition flag (P) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7" name="ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7"></a>FL_ZRO&#160;</td><td class="fielddoc"><p>Zero condition flag (Z) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62" name="ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62"></a>FL_NEG&#160;</td><td class="fielddoc"><p>Negative condition flag (N) </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="flags_8hpp_source.html#l00004">4</a> of file <a class="el" href="flags_8hpp_source.html">flags.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                 {</div>
-<div class="line"><span class="lineno">    5</span>    <a class="code hl_enumvalue" href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a92e2f7208f90a8ea28190bba203ee66f">FL_POS</a> = 1 &lt;&lt; 0,  <span class="comment">// Positive</span></div>
-<div class="line"><span class="lineno">    6</span>    <a class="code hl_enumvalue" href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7">FL_ZRO</a> = 1 &lt;&lt; 1,  <span class="comment">// Zero</span></div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_enumvalue" href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62">FL_NEG</a> = 1 &lt;&lt; 2   <span class="comment">// Negative</span></div>
-<div class="line"><span class="lineno">    8</span>};</div>
-<div class="ttc" id="aflags_8hpp_html_ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7"><div class="ttname"><a href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7">FL_ZRO</a></div><div class="ttdeci">@ FL_ZRO</div><div class="ttdef"><b>Definition</b> <a href="flags_8hpp_source.html#l00006">flags.hpp:6</a></div></div>
-<div class="ttc" id="aflags_8hpp_html_ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62"><div class="ttname"><a href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62">FL_NEG</a></div><div class="ttdeci">@ FL_NEG</div><div class="ttdef"><b>Definition</b> <a href="flags_8hpp_source.html#l00008">flags.hpp:7</a></div></div>
-<div class="ttc" id="aflags_8hpp_html_ac07b406ff87cafb1d2cd8356995f5f81a92e2f7208f90a8ea28190bba203ee66f"><div class="ttname"><a href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a92e2f7208f90a8ea28190bba203ee66f">FL_POS</a></div><div class="ttdeci">@ FL_POS</div><div class="ttdef"><b>Definition</b> <a href="flags_8hpp_source.html#l00005">flags.hpp:5</a></div></div>
+<p class="definition">Definition at line <a class="el" href="flags_8hpp_source.html#l00012">12</a> of file <a class="el" href="flags_8hpp_source.html">flags.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>                 {</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_enumvalue" href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a92e2f7208f90a8ea28190bba203ee66f">FL_POS</a> = 1 &lt;&lt; 0,  </div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_enumvalue" href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7">FL_ZRO</a> = 1 &lt;&lt; 1,  </div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62">FL_NEG</a> = 1 &lt;&lt; 2   </div>
+<div class="line"><span class="lineno">   16</span>};</div>
+<div class="ttc" id="aflags_8hpp_html_ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7"><div class="ttname"><a href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a3f0d73bd616fb71177fe35a3d36fefd7">FL_ZRO</a></div><div class="ttdeci">@ FL_ZRO</div><div class="ttdoc">Zero condition flag (Z)</div><div class="ttdef"><b>Definition</b> <a href="flags_8hpp_source.html#l00014">flags.hpp:14</a></div></div>
+<div class="ttc" id="aflags_8hpp_html_ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62"><div class="ttname"><a href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a498a1f80548ac99cd8cb593eb98a3d62">FL_NEG</a></div><div class="ttdeci">@ FL_NEG</div><div class="ttdoc">Negative condition flag (N)</div><div class="ttdef"><b>Definition</b> <a href="flags_8hpp_source.html#l00016">flags.hpp:15</a></div></div>
+<div class="ttc" id="aflags_8hpp_html_ac07b406ff87cafb1d2cd8356995f5f81a92e2f7208f90a8ea28190bba203ee66f"><div class="ttname"><a href="flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81a92e2f7208f90a8ea28190bba203ee66f">FL_POS</a></div><div class="ttdeci">@ FL_POS</div><div class="ttdoc">Positive condition flag (P)</div><div class="ttdef"><b>Definition</b> <a href="flags_8hpp_source.html#l00013">flags.hpp:13</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

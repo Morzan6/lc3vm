@@ -1,16 +1,16 @@
 <map id="LC3State::load_image" name="LC3State::load_image">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,153,169,179"/>
-<area shape="rect" id="Node000002" href="$classLC3State.html#a608043abe659369b614216e26c63aae1" title=" " alt="" coords="217,103,324,128"/>
+<area shape="rect" id="Node000001" title="Loads an LC&#45;3 program image into memory." alt="" coords="5,153,169,179"/>
+<area shape="rect" id="Node000002" href="$classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="217,103,324,128"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,151,210,129,212,134,135,156"/>
-<area shape="rect" id="Node000007" href="$classMemory.html#a91cc7ffdaff15bea4ae692dccc9d6959" title=" " alt="" coords="399,153,515,179"/>
+<area shape="rect" id="Node000007" href="$classMemory.html#a91cc7ffdaff15bea4ae692dccc9d6959" title="Writes a 16&#45;bit word to the specified memory address." alt="" coords="399,153,515,179"/>
 <area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="170,163,386,163,386,169,170,169"/>
-<area shape="rect" id="Node000008" href="$ls3_8cpp.html#a04f98d69da841663dfb280b41501b22a" title=" " alt="" coords="235,204,307,229"/>
+<area shape="rect" id="Node000008" href="$ls3_8cpp.html#a04f98d69da841663dfb280b41501b22a" title="Swaps the endianness of a 16&#45;bit unsigned integer. Useful for reading LC&#45;3 object files which are typ..." alt="" coords="235,204,307,229"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="135,176,222,201,221,206,134,181"/>
-<area shape="rect" id="Node000003" href="$classMemory.html#a7d7c6287a71c0c5c1bab82423d1de6d0" title=" " alt="" coords="401,5,513,31"/>
+<area shape="rect" id="Node000003" href="$classMemory.html#a7d7c6287a71c0c5c1bab82423d1de6d0" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="401,5,513,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="285,100,322,71,371,41,390,33,392,38,373,46,325,75,288,105"/>
-<area shape="rect" id="Node000005" href="$classLC3State.html#a91ce6448756aaf9d39685c837b770b37" title=" " alt="" coords="374,55,541,80"/>
+<area shape="rect" id="Node000005" href="$classLC3State.html#a91ce6448756aaf9d39685c837b770b37" title="Sign&#45;extends a number to 16 bits." alt="" coords="374,55,541,80"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="320,100,393,81,394,86,321,105"/>
-<area shape="rect" id="Node000006" href="$classLC3State.html#a862e7458e94a8a1355b7fb3324ee0136" title=" " alt="" coords="372,104,543,129"/>
+<area shape="rect" id="Node000006" href="$classLC3State.html#a862e7458e94a8a1355b7fb3324ee0136" title="Updates the condition flags (R_COND) based on the value of a register." alt="" coords="372,104,543,129"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="324,113,359,113,359,119,324,118"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="319,126,397,147,396,152,318,131"/>
 <area shape="rect" id="Node000004" href="$memory_8cpp.html#a1823ce2f43d6adf3b167c5f75837eb93" title=" " alt="" coords="591,5,681,31"/>

@@ -91,18 +91,20 @@ $(document).ready(function(){initNavTree('registers_8hpp.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">registers.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines the register set for the LC-3 VM.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for registers.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="registers_8hpp__incl.png" border="0" usemap="#aregisters_8hpp" alt=""/></div>
 <map name="aregisters_8hpp" id="aregisters_8hpp">
-<area shape="rect" title=" " alt="" coords="5,5,112,31"/>
+<area shape="rect" title="Defines the register set for the LC&#45;3 VM." alt="" coords="5,5,112,31"/>
 <area shape="rect" title=" " alt="" coords="25,79,92,104"/>
 <area shape="poly" title=" " alt="" coords="61,31,61,65,56,65,56,31"/>
 </map>
@@ -112,13 +114,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="registers_8hpp__dep__incl.png" border="0" usemap="#aregisters_8hppdep" alt=""/></div>
 <map name="aregisters_8hppdep" id="aregisters_8hppdep">
-<area shape="rect" title=" " alt="" coords="22,5,129,31"/>
-<area shape="rect" href="lc3_8hpp.html" title=" " alt="" coords="77,79,146,104"/>
+<area shape="rect" title="Defines the register set for the LC&#45;3 VM." alt="" coords="22,5,129,31"/>
+<area shape="rect" href="lc3_8hpp.html" title="Defines the main LC3State class for the LC&#45;3 virtual machine." alt="" coords="77,79,146,104"/>
 <area shape="poly" title=" " alt="" coords="90,42,108,77,103,80,85,44"/>
-<area shape="rect" href="ls3_8cpp.html" title=" " alt="" coords="5,152,73,177"/>
+<area shape="rect" href="ls3_8cpp.html" title="Implements the LC3State class methods for the LC&#45;3 virtual machine." alt="" coords="5,152,73,177"/>
 <area shape="poly" title=" " alt="" coords="72,45,45,152,40,151,67,44"/>
 <area shape="poly" title=" " alt="" coords="91,116,53,154,49,150,88,112"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="98,152,181,177"/>
+<area shape="rect" href="main_8cpp.html" title="Main entry point for the LC&#45;3 virtual machine." alt="" coords="98,152,181,177"/>
 <area shape="poly" title=" " alt="" coords="123,116,137,151,132,153,119,118"/>
 </map>
 </div>
@@ -143,14 +145,14 @@ Enumerations</h2></td></tr>
 , <a class="el" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577">R_COUNT</a>
 <br />
  }</td></tr>
+<tr class="memdesc:a19af2466c0539d02c49b0e9375bc6d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of LC-3 registers. Includes general-purpose registers (R0-R7), Program Counter (PC), and Condition Flags register (COND).  <a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1e">More...</a><br /></td></tr>
 <tr class="separator:a19af2466c0539d02c49b0e9375bc6d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:afa831239d2be1b0916cb7d61b7d46bba" id="r_afa831239d2be1b0916cb7d61b7d46bba"><td class="memItemLeft" align="right" valign="top">std::uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registers_8hpp.html#afa831239d2be1b0916cb7d61b7d46bba">registers</a> [<a class="el" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577">R_COUNT</a>]</td></tr>
-<tr class="separator:afa831239d2be1b0916cb7d61b7d46bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines the register set for the LC-3 VM. </p>
+
+<p class="definition">Definition in file <a class="el" href="registers_8hpp_source.html">registers.hpp</a>.</p>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a19af2466c0539d02c49b0e9375bc6d1e" name="a19af2466c0539d02c49b0e9375bc6d1e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19af2466c0539d02c49b0e9375bc6d1e">&#9670;&#160;</a></span>Registers</h2>
 
@@ -162,69 +164,59 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumeration of LC-3 registers. Includes general-purpose registers (R0-R7), Program Counter (PC), and Condition Flags register (COND). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea00b52895ffc3c7536a68c9c084a0962c" name="a19af2466c0539d02c49b0e9375bc6d1ea00b52895ffc3c7536a68c9c084a0962c"></a>R_R0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea8b6aea23f2ba0f42c357c53915945482" name="a19af2466c0539d02c49b0e9375bc6d1ea8b6aea23f2ba0f42c357c53915945482"></a>R_R1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1eabb719761bd1e61d2489d25ee3de02849" name="a19af2466c0539d02c49b0e9375bc6d1eabb719761bd1e61d2489d25ee3de02849"></a>R_R2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea037ca8451df2eaa2a2e791161ac429d5" name="a19af2466c0539d02c49b0e9375bc6d1ea037ca8451df2eaa2a2e791161ac429d5"></a>R_R3&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1eadea507f88b191a4cc9ca3608d17901d7" name="a19af2466c0539d02c49b0e9375bc6d1eadea507f88b191a4cc9ca3608d17901d7"></a>R_R4&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1eab4292a83a4c7f5c20a58b5a6c3cadce1" name="a19af2466c0539d02c49b0e9375bc6d1eab4292a83a4c7f5c20a58b5a6c3cadce1"></a>R_R5&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea7121ef96a4686ca52c1dcdeb18019ec9" name="a19af2466c0539d02c49b0e9375bc6d1ea7121ef96a4686ca52c1dcdeb18019ec9"></a>R_R6&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea585e5a28305b93b8e4a797f2e87456dc" name="a19af2466c0539d02c49b0e9375bc6d1ea585e5a28305b93b8e4a797f2e87456dc"></a>R_R7&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4" name="a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4"></a>R_PC&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71" name="a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71"></a>R_COND&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577" name="a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577"></a>R_COUNT&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea00b52895ffc3c7536a68c9c084a0962c" name="a19af2466c0539d02c49b0e9375bc6d1ea00b52895ffc3c7536a68c9c084a0962c"></a>R_R0&#160;</td><td class="fielddoc"><p>General purpose register R0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea8b6aea23f2ba0f42c357c53915945482" name="a19af2466c0539d02c49b0e9375bc6d1ea8b6aea23f2ba0f42c357c53915945482"></a>R_R1&#160;</td><td class="fielddoc"><p>General purpose register R1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1eabb719761bd1e61d2489d25ee3de02849" name="a19af2466c0539d02c49b0e9375bc6d1eabb719761bd1e61d2489d25ee3de02849"></a>R_R2&#160;</td><td class="fielddoc"><p>General purpose register R2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea037ca8451df2eaa2a2e791161ac429d5" name="a19af2466c0539d02c49b0e9375bc6d1ea037ca8451df2eaa2a2e791161ac429d5"></a>R_R3&#160;</td><td class="fielddoc"><p>General purpose register R3. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1eadea507f88b191a4cc9ca3608d17901d7" name="a19af2466c0539d02c49b0e9375bc6d1eadea507f88b191a4cc9ca3608d17901d7"></a>R_R4&#160;</td><td class="fielddoc"><p>General purpose register R4. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1eab4292a83a4c7f5c20a58b5a6c3cadce1" name="a19af2466c0539d02c49b0e9375bc6d1eab4292a83a4c7f5c20a58b5a6c3cadce1"></a>R_R5&#160;</td><td class="fielddoc"><p>General purpose register R5. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea7121ef96a4686ca52c1dcdeb18019ec9" name="a19af2466c0539d02c49b0e9375bc6d1ea7121ef96a4686ca52c1dcdeb18019ec9"></a>R_R6&#160;</td><td class="fielddoc"><p>General purpose register R6. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea585e5a28305b93b8e4a797f2e87456dc" name="a19af2466c0539d02c49b0e9375bc6d1ea585e5a28305b93b8e4a797f2e87456dc"></a>R_R7&#160;</td><td class="fielddoc"><p>General purpose register R7 (also used as subroutine linkage) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4" name="a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4"></a>R_PC&#160;</td><td class="fielddoc"><p>Program Counter register. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71" name="a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71"></a>R_COND&#160;</td><td class="fielddoc"><p>Condition Flags register (stores N, Z, or P flag) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577" name="a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577"></a>R_COUNT&#160;</td><td class="fielddoc"><p>Total number of registers (used for array sizing) </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="registers_8hpp_source.html#l00005">5</a> of file <a class="el" href="registers_8hpp_source.html">registers.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    5</span>               {</div>
-<div class="line"><span class="lineno">    6</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea00b52895ffc3c7536a68c9c084a0962c">R_R0</a> = 0,</div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea8b6aea23f2ba0f42c357c53915945482">R_R1</a>,</div>
-<div class="line"><span class="lineno">    8</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eabb719761bd1e61d2489d25ee3de02849">R_R2</a>,</div>
-<div class="line"><span class="lineno">    9</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea037ca8451df2eaa2a2e791161ac429d5">R_R3</a>,</div>
-<div class="line"><span class="lineno">   10</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eadea507f88b191a4cc9ca3608d17901d7">R_R4</a>,</div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eab4292a83a4c7f5c20a58b5a6c3cadce1">R_R5</a>,</div>
-<div class="line"><span class="lineno">   12</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea7121ef96a4686ca52c1dcdeb18019ec9">R_R6</a>,</div>
-<div class="line"><span class="lineno">   13</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea585e5a28305b93b8e4a797f2e87456dc">R_R7</a>,</div>
-<div class="line"><span class="lineno">   14</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4">R_PC</a>,    <span class="comment">// Program Counter</span></div>
-<div class="line"><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71">R_COND</a>,  <span class="comment">// Condition Flags</span></div>
-<div class="line"><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577">R_COUNT</a>  <span class="comment">// Total register count</span></div>
-<div class="line"><span class="lineno">   17</span>};</div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea00b52895ffc3c7536a68c9c084a0962c"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea00b52895ffc3c7536a68c9c084a0962c">R_R0</a></div><div class="ttdeci">@ R_R0</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00006">registers.hpp:6</a></div></div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea037ca8451df2eaa2a2e791161ac429d5"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea037ca8451df2eaa2a2e791161ac429d5">R_R3</a></div><div class="ttdeci">@ R_R3</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00009">registers.hpp:9</a></div></div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577">R_COUNT</a></div><div class="ttdeci">@ R_COUNT</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00017">registers.hpp:16</a></div></div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea585e5a28305b93b8e4a797f2e87456dc"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea585e5a28305b93b8e4a797f2e87456dc">R_R7</a></div><div class="ttdeci">@ R_R7</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00013">registers.hpp:13</a></div></div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea7121ef96a4686ca52c1dcdeb18019ec9"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea7121ef96a4686ca52c1dcdeb18019ec9">R_R6</a></div><div class="ttdeci">@ R_R6</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00012">registers.hpp:12</a></div></div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea8b6aea23f2ba0f42c357c53915945482"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea8b6aea23f2ba0f42c357c53915945482">R_R1</a></div><div class="ttdeci">@ R_R1</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00007">registers.hpp:7</a></div></div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4">R_PC</a></div><div class="ttdeci">@ R_PC</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00014">registers.hpp:14</a></div></div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1eab4292a83a4c7f5c20a58b5a6c3cadce1"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eab4292a83a4c7f5c20a58b5a6c3cadce1">R_R5</a></div><div class="ttdeci">@ R_R5</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00011">registers.hpp:11</a></div></div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1eabb719761bd1e61d2489d25ee3de02849"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eabb719761bd1e61d2489d25ee3de02849">R_R2</a></div><div class="ttdeci">@ R_R2</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00008">registers.hpp:8</a></div></div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71">R_COND</a></div><div class="ttdeci">@ R_COND</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00015">registers.hpp:15</a></div></div>
-<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1eadea507f88b191a4cc9ca3608d17901d7"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eadea507f88b191a4cc9ca3608d17901d7">R_R4</a></div><div class="ttdeci">@ R_R4</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00010">registers.hpp:10</a></div></div>
+<p class="definition">Definition at line <a class="el" href="registers_8hpp_source.html#l00014">14</a> of file <a class="el" href="registers_8hpp_source.html">registers.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>               {</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea00b52895ffc3c7536a68c9c084a0962c">R_R0</a> = 0, </div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea8b6aea23f2ba0f42c357c53915945482">R_R1</a>,     </div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eabb719761bd1e61d2489d25ee3de02849">R_R2</a>,     </div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea037ca8451df2eaa2a2e791161ac429d5">R_R3</a>,     </div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eadea507f88b191a4cc9ca3608d17901d7">R_R4</a>,     </div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eab4292a83a4c7f5c20a58b5a6c3cadce1">R_R5</a>,     </div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea7121ef96a4686ca52c1dcdeb18019ec9">R_R6</a>,     </div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea585e5a28305b93b8e4a797f2e87456dc">R_R7</a>,     </div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4">R_PC</a>,     </div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71">R_COND</a>,   </div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_enumvalue" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577">R_COUNT</a>   </div>
+<div class="line"><span class="lineno">   26</span>};</div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea00b52895ffc3c7536a68c9c084a0962c"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea00b52895ffc3c7536a68c9c084a0962c">R_R0</a></div><div class="ttdeci">@ R_R0</div><div class="ttdoc">General purpose register R0.</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00015">registers.hpp:15</a></div></div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea037ca8451df2eaa2a2e791161ac429d5"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea037ca8451df2eaa2a2e791161ac429d5">R_R3</a></div><div class="ttdeci">@ R_R3</div><div class="ttdoc">General purpose register R3.</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00018">registers.hpp:18</a></div></div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577">R_COUNT</a></div><div class="ttdeci">@ R_COUNT</div><div class="ttdoc">Total number of registers (used for array sizing)</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00026">registers.hpp:25</a></div></div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea585e5a28305b93b8e4a797f2e87456dc"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea585e5a28305b93b8e4a797f2e87456dc">R_R7</a></div><div class="ttdeci">@ R_R7</div><div class="ttdoc">General purpose register R7 (also used as subroutine linkage)</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00022">registers.hpp:22</a></div></div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea7121ef96a4686ca52c1dcdeb18019ec9"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea7121ef96a4686ca52c1dcdeb18019ec9">R_R6</a></div><div class="ttdeci">@ R_R6</div><div class="ttdoc">General purpose register R6.</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00021">registers.hpp:21</a></div></div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea8b6aea23f2ba0f42c357c53915945482"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea8b6aea23f2ba0f42c357c53915945482">R_R1</a></div><div class="ttdeci">@ R_R1</div><div class="ttdoc">General purpose register R1.</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00016">registers.hpp:16</a></div></div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4">R_PC</a></div><div class="ttdeci">@ R_PC</div><div class="ttdoc">Program Counter register.</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00023">registers.hpp:23</a></div></div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1eab4292a83a4c7f5c20a58b5a6c3cadce1"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eab4292a83a4c7f5c20a58b5a6c3cadce1">R_R5</a></div><div class="ttdeci">@ R_R5</div><div class="ttdoc">General purpose register R5.</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00020">registers.hpp:20</a></div></div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1eabb719761bd1e61d2489d25ee3de02849"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eabb719761bd1e61d2489d25ee3de02849">R_R2</a></div><div class="ttdeci">@ R_R2</div><div class="ttdoc">General purpose register R2.</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00017">registers.hpp:17</a></div></div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71">R_COND</a></div><div class="ttdeci">@ R_COND</div><div class="ttdoc">Condition Flags register (stores N, Z, or P flag)</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00024">registers.hpp:24</a></div></div>
+<div class="ttc" id="aregisters_8hpp_html_a19af2466c0539d02c49b0e9375bc6d1eadea507f88b191a4cc9ca3608d17901d7"><div class="ttname"><a href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eadea507f88b191a4cc9ca3608d17901d7">R_R4</a></div><div class="ttdeci">@ R_R4</div><div class="ttdoc">General purpose register R4.</div><div class="ttdef"><b>Definition</b> <a href="registers_8hpp_source.html#l00019">registers.hpp:19</a></div></div>
 </div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="afa831239d2be1b0916cb7d61b7d46bba" name="afa831239d2be1b0916cb7d61b7d46bba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa831239d2be1b0916cb7d61b7d46bba">&#9670;&#160;</a></span>registers</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::uint16_t registers[<a class="el" href="registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577">R_COUNT</a>]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
 </div>
 </div>
 </div><!-- contents -->

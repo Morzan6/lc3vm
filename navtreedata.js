@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "LC3 VM", "index.html", [
+    [ "LC-3 Virtual Machine (lc3vm)", "index.html", "index" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

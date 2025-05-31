@@ -1,29 +1,29 @@
 <map id="main" name="main">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,60,81"/>
-<area shape="rect" id="Node000002" href="$main_8cpp.html#a8bfc90b3fb9344e9caafec953baacc0b" title=" " alt="" coords="108,5,217,31"/>
+<area shape="rect" id="Node000001" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,56,60,81"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a8bfc90b3fb9344e9caafec953baacc0b" title="Signal handler for SIGINT (Ctrl+C). Requests the LC&#45;3 VM to halt its execution gracefully." alt="" coords="108,5,217,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,56,116,33,118,38,61,61"/>
-<area shape="rect" id="Node000004" href="$classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title=" " alt="" coords="268,56,432,81"/>
+<area shape="rect" id="Node000004" href="$classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="268,56,432,81"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="60,66,254,66,254,71,60,71"/>
-<area shape="rect" id="Node000012" href="$classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title=" " alt="" coords="108,107,217,132"/>
+<area shape="rect" id="Node000012" href="$classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="108,107,217,132"/>
 <area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="61,77,118,99,116,104,59,82"/>
-<area shape="rect" id="Node000003" href="$classLC3State.html#ad12c3ef681a4edd04a2284b03f48ddb9" title=" " alt="" coords="265,5,435,31"/>
+<area shape="rect" id="Node000003" href="$classLC3State.html#ad12c3ef681a4edd04a2284b03f48ddb9" title="Requests the VM to halt execution after the current instruction. Sets the internal running flag to fa..." alt="" coords="265,5,435,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,15,252,15,252,21,217,21"/>
-<area shape="rect" id="Node000005" href="$classLC3State.html#a608043abe659369b614216e26c63aae1" title=" " alt="" coords="483,105,589,131"/>
+<area shape="rect" id="Node000005" href="$classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="483,105,589,131"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="399,79,474,99,473,104,398,84"/>
-<area shape="rect" id="Node000010" href="$classMemory.html#a91cc7ffdaff15bea4ae692dccc9d6959" title=" " alt="" coords="665,7,781,32"/>
+<area shape="rect" id="Node000010" href="$classMemory.html#a91cc7ffdaff15bea4ae692dccc9d6959" title="Writes a 16&#45;bit word to the specified memory address." alt="" coords="665,7,781,32"/>
 <area shape="poly" id="edge11_Node000004_Node000010" title=" " alt="" coords="411,53,482,41,650,22,651,27,483,46,412,59"/>
-<area shape="rect" id="Node000011" href="$ls3_8cpp.html#a04f98d69da841663dfb280b41501b22a" title=" " alt="" coords="500,56,572,81"/>
+<area shape="rect" id="Node000011" href="$ls3_8cpp.html#a04f98d69da841663dfb280b41501b22a" title="Swaps the endianness of a 16&#45;bit unsigned integer. Useful for reading LC&#45;3 object files which are typ..." alt="" coords="500,56,572,81"/>
 <area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="432,66,486,66,486,71,432,71"/>
-<area shape="rect" id="Node000006" href="$classMemory.html#a7d7c6287a71c0c5c1bab82423d1de6d0" title=" " alt="" coords="667,156,779,181"/>
+<area shape="rect" id="Node000006" href="$classMemory.html#a7d7c6287a71c0c5c1bab82423d1de6d0" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="667,156,779,181"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="584,128,663,150,661,155,583,133"/>
-<area shape="rect" id="Node000008" href="$classLC3State.html#a91ce6448756aaf9d39685c837b770b37" title=" " alt="" coords="639,107,806,132"/>
+<area shape="rect" id="Node000008" href="$classLC3State.html#a91ce6448756aaf9d39685c837b770b37" title="Sign&#45;extends a number to 16 bits." alt="" coords="639,107,806,132"/>
 <area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="590,116,626,116,626,121,590,121"/>
-<area shape="rect" id="Node000009" href="$classLC3State.html#a862e7458e94a8a1355b7fb3324ee0136" title=" " alt="" coords="637,57,808,83"/>
+<area shape="rect" id="Node000009" href="$classLC3State.html#a862e7458e94a8a1355b7fb3324ee0136" title="Updates the condition flags (R_COND) based on the value of a register." alt="" coords="637,57,808,83"/>
 <area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="585,103,658,84,659,89,587,108"/>
 <area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="567,103,588,91,602,78,611,66,621,54,636,42,651,35,654,39,639,47,624,58,615,70,606,82,591,95,569,107"/>
 <area shape="rect" id="Node000007" href="$memory_8cpp.html#a1823ce2f43d6adf3b167c5f75837eb93" title=" " alt="" coords="856,156,947,181"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="779,166,842,166,842,171,779,171"/>
-<area shape="rect" id="Node000013" href="$classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title=" " alt="" coords="292,107,408,132"/>
+<area shape="rect" id="Node000013" href="$classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="292,107,408,132"/>
 <area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="217,117,278,117,278,122,217,122"/>
 <area shape="poly" id="edge14_Node000013_Node000005" title=" " alt="" coords="408,116,469,116,469,121,408,122"/>
 <area shape="poly" id="edge15_Node000013_Node000006" title=" " alt="" coords="409,127,483,139,653,159,652,165,482,145,408,133"/>

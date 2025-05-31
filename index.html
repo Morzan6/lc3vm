@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LC3 VM: Main Page</title>
+<title>LC3 VM: LC-3 Virtual Machine (lc3vm)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,10 +89,92 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">LC3 VM Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">LC-3 Virtual Machine (lc3vm) </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> HSE Student project for an LC-3 (Little Computer 3) Virtual Machine implementation in C++.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Overview</h1>
+<p>This project implements a functional LC-3 virtual machine that can load and execute LC-3 assembly programs (<code>.obj</code> files). It includes a CPU, memory, and support for various LC-3 instructions and trap routines for basic I/O.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Features</h1>
+<ul>
+<li><b>Instruction Set</b>: Implements the standard LC-3 opcodes:<ul>
+<li><code>ADD</code>, <code>AND</code>, <code>NOT</code></li>
+<li><code>BR</code> (Branch)</li>
+<li><code>JMP</code> (Jump), <code>RET</code> (Return from Subroutine via <code>JMP R7</code>)</li>
+<li><code>JSR</code>, <code>JSRR</code> (Jump to Subroutine)</li>
+<li><code>LD</code>, <code>LDI</code>, <code>LDR</code> (Load)</li>
+<li><code>ST</code>, <code>STI</code>, <code>STR</code> (Store)</li>
+<li><code>LEA</code> (Load Effective Address)</li>
+<li><code>RTI</code> (Return from Interrupt - placeholder, not fully implemented)</li>
+<li><code>RES</code> (Reserved - placeholder)</li>
+</ul>
+</li>
+<li><b>Trap Routines</b>: Supports common TRAP routines:<ul>
+<li><code>TRAP_GETC</code>: Get character from keyboard (not echoed).</li>
+<li><code>TRAP_OUT</code>: Output a character to the console.</li>
+<li><code>TRAP_PUTS</code>: Output a null-terminated string.</li>
+<li><code>TRAP_IN</code>: Get character from keyboard (echoed) with prompt.</li>
+<li><code>TRAP_PUTSP</code>: Output a null-terminated string of packed characters.</li>
+<li><code>TRAP_HALT</code>: Halt the program.</li>
+</ul>
+</li>
+<li><b>Memory-mapped I/O</b>: Keyboard Status Register (<code>KBSR</code>) and Keyboard Data Register (<code>KBDR</code>) are implemented.</li>
+<li><b>Unit Tests</b>: Includes a suite of unit tests using Google Test to verify instruction behavior.</li>
+<li><b>Documentation</b>: Source code documentation can be generated using Doxygen.</li>
+<li><b>CI/CD</b>: Basic GitHub Actions workflow for building and testing on push/pull request.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Dependencies</h1>
+<p>To build and run this project, you will need:</p>
+<ul>
+<li><code>g++</code> (with C++14 support or newer)</li>
+<li><code>make</code></li>
+<li>Google Test (<code>libgtest-dev</code> on Debian/Ubuntu systems)</li>
+<li><code>doxygen</code> (optional, for generating documentation)</li>
+<li><code>graphviz</code> (optional, for Doxygen diagrams)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Building the Project</h1>
+<p>The project uses a Makefile located in the <code>lc3vm/</code> directory.</p>
+<ol type="1">
+<li><p class="startli"><b>Navigate to the <code>lc3vm</code> directory</b>:</p>
+<div class="fragment"><div class="line">cd lc3vm</div>
+</div><!-- fragment --></li>
+<li><p class="startli"><b>Build the VM</b>:</p>
+<div class="fragment"><div class="line">make</div>
+</div><!-- fragment --><p class="startli">This will create the executable <code>build/lc3vm</code> inside the <code>lc3vm</code> directory.</p>
+</li>
+<li><b>Build the tests</b>: The test executable <code>build/test_runner</code> (inside <code>lc3vm</code>) is also built by the default <code>make</code> target or specifically with <code>make test_runner</code>.</li>
+<li><p class="startli"><b>Clean build files</b>:</p>
+<div class="fragment"><div class="line">make clean</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Running the VM</h1>
+<p>To run an LC-3 object file:</p>
+<div class="fragment"><div class="line">./lc3vm/build/lc3vm path/to/your_program.obj [path/to/another_program.obj ...]</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+Running Tests</h1>
+<p>To compile and run the unit tests (from within the <code>lc3vm</code> directory):</p>
+<div class="fragment"><div class="line">make test</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+Project Structure</h1>
+<div class="fragment"><div class="line">.</div>
+<div class="line">├── .github/            # GitHub Actions workflows</div>
+<div class="line">├── docs/               # Generated Doxygen documentation (after &#39;make docs&#39;)</div>
+<div class="line">├── lc3vm/              # Main directory for the VM</div>
+<div class="line">│   ├── Doxyfile        # Doxygen configuration file</div>
+<div class="line">│   ├── Makefile        # Makefile for building the VM and tests</div>
+<div class="line">│   ├── build/          # Build output directory (executables, object files)</div>
+<div class="line">│   ├── include/        # Header files for the LC-3 VM</div>
+<div class="line">│   ├── src/            # Source files for the LC-3 VM</div>
+<div class="line">│   └── tests/          # Unit test source files (using Google Test)</div>
+<div class="line">├── README.md           # This file</div>
+<div class="line">└── LICENSE             # Project License</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

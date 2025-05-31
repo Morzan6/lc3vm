@@ -95,18 +95,21 @@ $(document).ready(function(){initNavTree('opcodes_8hpp.html',''); initResizable(
   <div class="headertitle"><div class="title">opcodes.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines the opcodes for the LC-3 instruction set.  
+<a href="#details">More...</a></p>
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="opcodes_8hpp__dep__incl.png" border="0" usemap="#aopcodes_8hppdep" alt=""/></div>
 <map name="aopcodes_8hppdep" id="aopcodes_8hppdep">
-<area shape="rect" title=" " alt="" coords="23,5,127,31"/>
-<area shape="rect" href="lc3_8hpp.html" title=" " alt="" coords="77,79,146,104"/>
+<area shape="rect" title="Defines the opcodes for the LC&#45;3 instruction set." alt="" coords="23,5,127,31"/>
+<area shape="rect" href="lc3_8hpp.html" title="Defines the main LC3State class for the LC&#45;3 virtual machine." alt="" coords="77,79,146,104"/>
 <area shape="poly" title=" " alt="" coords="90,42,108,77,103,80,85,44"/>
-<area shape="rect" href="ls3_8cpp.html" title=" " alt="" coords="5,152,73,177"/>
+<area shape="rect" href="ls3_8cpp.html" title="Implements the LC3State class methods for the LC&#45;3 virtual machine." alt="" coords="5,152,73,177"/>
 <area shape="poly" title=" " alt="" coords="72,45,45,152,40,151,67,44"/>
 <area shape="poly" title=" " alt="" coords="91,116,53,154,49,150,88,112"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="98,152,181,177"/>
+<area shape="rect" href="main_8cpp.html" title="Main entry point for the LC&#45;3 virtual machine." alt="" coords="98,152,181,177"/>
 <area shape="poly" title=" " alt="" coords="123,116,137,151,132,153,119,118"/>
 </map>
 </div>
@@ -137,9 +140,14 @@ Enumerations</h2></td></tr>
 , <a class="el" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f">OP_TRAP</a> = 15
 <br />
  }</td></tr>
+<tr class="memdesc:abeeee4622d9285fa92e9b61857002cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of LC-3 instruction opcodes. Each opcode corresponds to a specific operation in the LC-3 instruction set.  <a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cac">More...</a><br /></td></tr>
 <tr class="separator:abeeee4622d9285fa92e9b61857002cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines the opcodes for the LC-3 instruction set. </p>
+
+<p class="definition">Definition in file <a class="el" href="opcodes_8hpp_source.html">opcodes.hpp</a>.</p>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="abeeee4622d9285fa92e9b61857002cac" name="abeeee4622d9285fa92e9b61857002cac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abeeee4622d9285fa92e9b61857002cac">&#9670;&#160;</a></span>Opcodes</h2>
 
@@ -151,60 +159,78 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumeration of LC-3 instruction opcodes. Each opcode corresponds to a specific operation in the LC-3 instruction set. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64" name="abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64"></a>OP_BR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8" name="abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8"></a>OP_ADD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0" name="abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0"></a>OP_LD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46" name="abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46"></a>OP_ST&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834" name="abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834"></a>OP_JSR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18" name="abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18"></a>OP_AND&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23" name="abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23"></a>OP_LDR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba" name="abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba"></a>OP_STR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b" name="abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b"></a>OP_RTI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1" name="abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1"></a>OP_NOT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1" name="abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1"></a>OP_LDI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44" name="abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44"></a>OP_STI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b" name="abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b"></a>OP_JMP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f" name="abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f"></a>OP_RES&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b" name="abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b"></a>OP_LEA&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f" name="abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f"></a>OP_TRAP&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64" name="abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64"></a>OP_BR&#160;</td><td class="fielddoc"><p>Branch instruction (BR) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8" name="abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8"></a>OP_ADD&#160;</td><td class="fielddoc"><p>Add instruction (ADD) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0" name="abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0"></a>OP_LD&#160;</td><td class="fielddoc"><p>Load instruction (LD) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46" name="abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46"></a>OP_ST&#160;</td><td class="fielddoc"><p>Store instruction (ST) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834" name="abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834"></a>OP_JSR&#160;</td><td class="fielddoc"><p>Jump to Subroutine instruction (JSR/JSRR) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18" name="abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18"></a>OP_AND&#160;</td><td class="fielddoc"><p>Bitwise AND instruction (AND) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23" name="abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23"></a>OP_LDR&#160;</td><td class="fielddoc"><p>Load Base+offset instruction (LDR) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba" name="abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba"></a>OP_STR&#160;</td><td class="fielddoc"><p>Store Base+offset instruction (STR) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b" name="abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b"></a>OP_RTI&#160;</td><td class="fielddoc"><p>Return from Interrupt instruction (RTI) - Currently unused. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1" name="abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1"></a>OP_NOT&#160;</td><td class="fielddoc"><p>Bitwise NOT instruction (NOT) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1" name="abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1"></a>OP_LDI&#160;</td><td class="fielddoc"><p>Load Indirect instruction (LDI) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44" name="abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44"></a>OP_STI&#160;</td><td class="fielddoc"><p>Store Indirect instruction (STI) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b" name="abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b"></a>OP_JMP&#160;</td><td class="fielddoc"><p>Jump instruction (JMP), also handles RET (JMP R7) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f" name="abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f"></a>OP_RES&#160;</td><td class="fielddoc"><p>Reserved opcode - Currently unused. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b" name="abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b"></a>OP_LEA&#160;</td><td class="fielddoc"><p>Load Effective Address instruction (LEA) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f" name="abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f"></a>OP_TRAP&#160;</td><td class="fielddoc"><p>Execute Trap / System Call instruction (TRAP) </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="opcodes_8hpp_source.html#l00004">4</a> of file <a class="el" href="opcodes_8hpp_source.html">opcodes.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>             {</div>
-<div class="line"><span class="lineno">    5</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64">OP_BR</a> = 0,      <span class="comment">// Branch</span></div>
-<div class="line"><span class="lineno">    6</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8">OP_ADD</a> = 1,      <span class="comment">// Add</span></div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0">OP_LD</a> = 2,       <span class="comment">// Load</span></div>
-<div class="line"><span class="lineno">    8</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46">OP_ST</a> = 3,       <span class="comment">// Store</span></div>
-<div class="line"><span class="lineno">    9</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834">OP_JSR</a> = 4,      <span class="comment">// Jump to Subroutine </span></div>
-<div class="line"><span class="lineno">   10</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18">OP_AND</a> = 5,      <span class="comment">// Bitwise AND (C code: 5)</span></div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23">OP_LDR</a> = 6,      <span class="comment">// Load Register (C code: 6)</span></div>
-<div class="line"><span class="lineno">   12</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba">OP_STR</a> = 7,      <span class="comment">// Store Register (C code: 7)</span></div>
-<div class="line"><span class="lineno">   13</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b">OP_RTI</a> = 8,      <span class="comment">// Return from Interrupt (C code: 8, unused)</span></div>
-<div class="line"><span class="lineno">   14</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1">OP_NOT</a> = 9,      <span class="comment">// Bitwise NOT (C code: 9)</span></div>
-<div class="line"><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1">OP_LDI</a> = 10,     <span class="comment">// Load Indirect (C code: 10)</span></div>
-<div class="line"><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44">OP_STI</a> = 11,     <span class="comment">// Store Indirect (C code: 11)</span></div>
-<div class="line"><span class="lineno">   17</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b">OP_JMP</a> = 12,     <span class="comment">// Jump (C code: 12, distinct from JSR)</span></div>
-<div class="line"><span class="lineno">   18</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f">OP_RES</a> = 13,     <span class="comment">// Reserved (C code: 13, unused)</span></div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b">OP_LEA</a> = 14,     <span class="comment">// Load Effective Address (C code: 14)</span></div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f">OP_TRAP</a> = 15     <span class="comment">// Trap/System Call (C code: 15)</span></div>
-<div class="line"><span class="lineno">   21</span>};</div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0">OP_LD</a></div><div class="ttdeci">@ OP_LD</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00007">opcodes.hpp:7</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b">OP_RTI</a></div><div class="ttdeci">@ OP_RTI</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00013">opcodes.hpp:13</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1">OP_LDI</a></div><div class="ttdeci">@ OP_LDI</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00015">opcodes.hpp:15</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f">OP_RES</a></div><div class="ttdeci">@ OP_RES</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00018">opcodes.hpp:18</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1">OP_NOT</a></div><div class="ttdeci">@ OP_NOT</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00014">opcodes.hpp:14</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f">OP_TRAP</a></div><div class="ttdeci">@ OP_TRAP</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00021">opcodes.hpp:20</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46">OP_ST</a></div><div class="ttdeci">@ OP_ST</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00008">opcodes.hpp:8</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23">OP_LDR</a></div><div class="ttdeci">@ OP_LDR</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00011">opcodes.hpp:11</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8">OP_ADD</a></div><div class="ttdeci">@ OP_ADD</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00006">opcodes.hpp:6</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba">OP_STR</a></div><div class="ttdeci">@ OP_STR</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00012">opcodes.hpp:12</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44">OP_STI</a></div><div class="ttdeci">@ OP_STI</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00016">opcodes.hpp:16</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18">OP_AND</a></div><div class="ttdeci">@ OP_AND</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00010">opcodes.hpp:10</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834">OP_JSR</a></div><div class="ttdeci">@ OP_JSR</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00009">opcodes.hpp:9</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64">OP_BR</a></div><div class="ttdeci">@ OP_BR</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00005">opcodes.hpp:5</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b">OP_LEA</a></div><div class="ttdeci">@ OP_LEA</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00019">opcodes.hpp:19</a></div></div>
-<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b">OP_JMP</a></div><div class="ttdeci">@ OP_JMP</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00017">opcodes.hpp:17</a></div></div>
+<p class="definition">Definition at line <a class="el" href="opcodes_8hpp_source.html#l00012">12</a> of file <a class="el" href="opcodes_8hpp_source.html">opcodes.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>             {</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64">OP_BR</a> = 0,      </div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8">OP_ADD</a> = 1,     </div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0">OP_LD</a> = 2,      </div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46">OP_ST</a> = 3,      </div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834">OP_JSR</a> = 4,     </div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18">OP_AND</a> = 5,     </div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23">OP_LDR</a> = 6,     </div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba">OP_STR</a> = 7,     </div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b">OP_RTI</a> = 8,     </div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1">OP_NOT</a> = 9,     </div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1">OP_LDI</a> = 10,    </div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44">OP_STI</a> = 11,    </div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b">OP_JMP</a> = 12,    </div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f">OP_RES</a> = 13,    </div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b">OP_LEA</a> = 14,    </div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_enumvalue" href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f">OP_TRAP</a> = 15    </div>
+<div class="line"><span class="lineno">   29</span>};</div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca0192f4c91a376714929d91ebcb5bc6c0">OP_LD</a></div><div class="ttdeci">@ OP_LD</div><div class="ttdoc">Load instruction (LD)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00015">opcodes.hpp:15</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca0f3dd2ae8747f6172d627008da229c1b">OP_RTI</a></div><div class="ttdeci">@ OP_RTI</div><div class="ttdoc">Return from Interrupt instruction (RTI) - Currently unused.</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00021">opcodes.hpp:21</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca1990b5ea5a4c122ad3ebea07d2c4f4e1">OP_LDI</a></div><div class="ttdeci">@ OP_LDI</div><div class="ttdoc">Load Indirect instruction (LDI)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00023">opcodes.hpp:23</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca302c9c022daf374da1d32a4e7160789f">OP_RES</a></div><div class="ttdeci">@ OP_RES</div><div class="ttdoc">Reserved opcode - Currently unused.</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00026">opcodes.hpp:26</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca36a6b73cc4823f54891a013e2cc760d1">OP_NOT</a></div><div class="ttdeci">@ OP_NOT</div><div class="ttdoc">Bitwise NOT instruction (NOT)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00022">opcodes.hpp:22</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca508c435f8ec46ec73228fd4396ea615f">OP_TRAP</a></div><div class="ttdeci">@ OP_TRAP</div><div class="ttdoc">Execute Trap / System Call instruction (TRAP)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00029">opcodes.hpp:28</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca586e6f99b03462e01e8c78e90e626a46">OP_ST</a></div><div class="ttdeci">@ OP_ST</div><div class="ttdoc">Store instruction (ST)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00016">opcodes.hpp:16</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca6257d064e866406520d1f5cbdad87e23">OP_LDR</a></div><div class="ttdeci">@ OP_LDR</div><div class="ttdoc">Load Base+offset instruction (LDR)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00019">opcodes.hpp:19</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002caca96186829480e5b34b1373288e956b1c8">OP_ADD</a></div><div class="ttdeci">@ OP_ADD</div><div class="ttdoc">Add instruction (ADD)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00014">opcodes.hpp:14</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacaaf54dc8cb8496d427822676e8d437aba">OP_STR</a></div><div class="ttdeci">@ OP_STR</div><div class="ttdoc">Store Base+offset instruction (STR)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00020">opcodes.hpp:20</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacab8d6587a0a37c7497d3310f84bb16d44">OP_STI</a></div><div class="ttdeci">@ OP_STI</div><div class="ttdoc">Store Indirect instruction (STI)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00024">opcodes.hpp:24</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae2310d00f26e94b32317ecd168fb7e18">OP_AND</a></div><div class="ttdeci">@ OP_AND</div><div class="ttdoc">Bitwise AND instruction (AND)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00018">opcodes.hpp:18</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae4857b8a85406abe08efeedc7f360834">OP_JSR</a></div><div class="ttdeci">@ OP_JSR</div><div class="ttdoc">Jump to Subroutine instruction (JSR/JSRR)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00017">opcodes.hpp:17</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacae6b7ed352fbae252bc778e56fcca7b64">OP_BR</a></div><div class="ttdeci">@ OP_BR</div><div class="ttdoc">Branch instruction (BR)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00013">opcodes.hpp:13</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacaee544d2ee06ca279453d6d8e0607cd6b">OP_LEA</a></div><div class="ttdeci">@ OP_LEA</div><div class="ttdoc">Load Effective Address instruction (LEA)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00027">opcodes.hpp:27</a></div></div>
+<div class="ttc" id="aopcodes_8hpp_html_abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b"><div class="ttname"><a href="opcodes_8hpp.html#abeeee4622d9285fa92e9b61857002cacafd679fab86e6a91d22c91734e287639b">OP_JMP</a></div><div class="ttdeci">@ OP_JMP</div><div class="ttdoc">Jump instruction (JMP), also handles RET (JMP R7)</div><div class="ttdef"><b>Definition</b> <a href="opcodes_8hpp_source.html#l00025">opcodes.hpp:25</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -96,13 +96,16 @@ $(document).ready(function(){initNavTree('keyboard_8hpp.html',''); initResizable
   <div class="headertitle"><div class="title">keyboard.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines constants and functions related to LC-3 keyboard input.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for keyboard.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="keyboard_8hpp__incl.png" border="0" usemap="#akeyboard_8hpp" alt=""/></div>
 <map name="akeyboard_8hpp" id="akeyboard_8hpp">
-<area shape="rect" title=" " alt="" coords="5,5,116,31"/>
+<area shape="rect" title="Defines constants and functions related to LC&#45;3 keyboard input." alt="" coords="5,5,116,31"/>
 <area shape="rect" title=" " alt="" coords="27,79,94,104"/>
 <area shape="poly" title=" " alt="" coords="63,31,63,65,58,65,58,31"/>
 </map>
@@ -112,8 +115,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="keyboard_8hpp__dep__incl.png" border="0" usemap="#akeyboard_8hppdep" alt=""/></div>
 <map name="akeyboard_8hppdep" id="akeyboard_8hppdep">
-<area shape="rect" title=" " alt="" coords="5,5,116,31"/>
-<area shape="rect" href="memory_8cpp.html" title=" " alt="" coords="9,79,112,104"/>
+<area shape="rect" title="Defines constants and functions related to LC&#45;3 keyboard input." alt="" coords="5,5,116,31"/>
+<area shape="rect" href="memory_8cpp.html" title="Implements the Memory class methods for the LC&#45;3 virtual machine." alt="" coords="9,79,112,104"/>
 <area shape="poly" title=" " alt="" coords="63,44,63,79,58,79,58,44"/>
 </map>
 </div>
@@ -127,14 +130,20 @@ Enumerations</h2></td></tr>
 , <a class="el" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a6e086f712cdb93c351411ae9537db372">MR_KBSR_SHIFT</a> = 15
 , <a class="el" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a7d5f954eec029049d541b5a53ed5e9ac">MR_KBDR_SHIFT</a> = 0
  }</td></tr>
+<tr class="memdesc:abcabfff8e6138e0943763148d70e5005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for LC-3 keyboard related memory mapped registers and values.  <a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005">More...</a><br /></td></tr>
 <tr class="separator:abcabfff8e6138e0943763148d70e5005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2d23c6d62457c73987ae4e7098d4ff83" id="r_a2d23c6d62457c73987ae4e7098d4ff83"><td class="memItemLeft" align="right" valign="top">std::uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keyboard_8hpp.html#a2d23c6d62457c73987ae4e7098d4ff83">get_key</a> ()</td></tr>
+<tr class="memdesc:a2d23c6d62457c73987ae4e7098d4ff83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a key from standard input (non-blocking if possible, platform dependent). This function is intended to be called when MR_KBSR indicates a key is ready.  <br /></td></tr>
 <tr class="separator:a2d23c6d62457c73987ae4e7098d4ff83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines constants and functions related to LC-3 keyboard input. </p>
+
+<p class="definition">Definition in file <a class="el" href="keyboard_8hpp_source.html">keyboard.hpp</a>.</p>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="abcabfff8e6138e0943763148d70e5005" name="abcabfff8e6138e0943763148d70e5005"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abcabfff8e6138e0943763148d70e5005">&#9670;&#160;</a></span>Keyboard</h2>
 
@@ -146,6 +155,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumeration for LC-3 keyboard related memory mapped registers and values. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b" name="abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b"></a>MR_KBSR&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52" name="abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52"></a>MR_KBDR&#160;</td><td class="fielddoc"></td></tr>
@@ -153,19 +164,19 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="abcabfff8e6138e0943763148d70e5005a7d5f954eec029049d541b5a53ed5e9ac" name="abcabfff8e6138e0943763148d70e5005a7d5f954eec029049d541b5a53ed5e9ac"></a>MR_KBDR_SHIFT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="keyboard_8hpp_source.html#l00006">6</a> of file <a class="el" href="keyboard_8hpp_source.html">keyboard.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    6</span>              {</div>
-<div class="line"><span class="lineno">    7</span> </div>
-<div class="line"><span class="lineno">    8</span>    <a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">MR_KBSR</a> = 0xFE00, <span class="comment">// Keyboard Status Register</span></div>
-<div class="line"><span class="lineno">    9</span>    <a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52">MR_KBDR</a> = 0xFE02, <span class="comment">// Keyboard Data Register</span></div>
-<div class="line"><span class="lineno">   10</span>    <a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a6e086f712cdb93c351411ae9537db372">MR_KBSR_SHIFT</a> = 15, <span class="comment">// Keyboard Status Register Shift</span></div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a7d5f954eec029049d541b5a53ed5e9ac">MR_KBDR_SHIFT</a> = 0, <span class="comment">// Keyboard Data Register Shift</span></div>
-<div class="line"><span class="lineno">   12</span> </div>
-<div class="line"><span class="lineno">   13</span>};</div>
-<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005a6e086f712cdb93c351411ae9537db372"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a6e086f712cdb93c351411ae9537db372">MR_KBSR_SHIFT</a></div><div class="ttdeci">@ MR_KBSR_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00010">keyboard.hpp:10</a></div></div>
-<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005a7d5f954eec029049d541b5a53ed5e9ac"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a7d5f954eec029049d541b5a53ed5e9ac">MR_KBDR_SHIFT</a></div><div class="ttdeci">@ MR_KBDR_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00011">keyboard.hpp:11</a></div></div>
-<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52">MR_KBDR</a></div><div class="ttdeci">@ MR_KBDR</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00009">keyboard.hpp:9</a></div></div>
-<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">MR_KBSR</a></div><div class="ttdeci">@ MR_KBSR</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00008">keyboard.hpp:8</a></div></div>
+<p class="definition">Definition at line <a class="el" href="keyboard_8hpp_source.html#l00013">13</a> of file <a class="el" href="keyboard_8hpp_source.html">keyboard.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>              {</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">MR_KBSR</a> = 0xFE00, <span class="comment">// Keyboard Status Register</span></div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52">MR_KBDR</a> = 0xFE02, <span class="comment">// Keyboard Data Register</span></div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a6e086f712cdb93c351411ae9537db372">MR_KBSR_SHIFT</a> = 15, <span class="comment">// Keyboard Status Register Shift</span></div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_enumvalue" href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a7d5f954eec029049d541b5a53ed5e9ac">MR_KBDR_SHIFT</a> = 0, <span class="comment">// Keyboard Data Register Shift</span></div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>};</div>
+<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005a6e086f712cdb93c351411ae9537db372"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a6e086f712cdb93c351411ae9537db372">MR_KBSR_SHIFT</a></div><div class="ttdeci">@ MR_KBSR_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00017">keyboard.hpp:17</a></div></div>
+<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005a7d5f954eec029049d541b5a53ed5e9ac"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a7d5f954eec029049d541b5a53ed5e9ac">MR_KBDR_SHIFT</a></div><div class="ttdeci">@ MR_KBDR_SHIFT</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00018">keyboard.hpp:18</a></div></div>
+<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005a98301b479d27fcd866d28c374f4a1b52">MR_KBDR</a></div><div class="ttdeci">@ MR_KBDR</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00016">keyboard.hpp:16</a></div></div>
+<div class="ttc" id="akeyboard_8hpp_html_abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b"><div class="ttname"><a href="keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005af08278fa182778439bee698679a02f3b">MR_KBSR</a></div><div class="ttdeci">@ MR_KBSR</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8hpp_source.html#l00015">keyboard.hpp:15</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -184,6 +195,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets a key from standard input (non-blocking if possible, platform dependent). This function is intended to be called when MR_KBSR indicates a key is ready. </p>
+<dl class="section return"><dt>Returns</dt><dd>The ASCII value of the key pressed as a std::uint16_t. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The original C implementation used custom terminal handling. This version might rely on standard input buffering. </dd></dl>
 
 </div>
 </div>

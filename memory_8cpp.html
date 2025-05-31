@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('memory_8cpp.html',''); initResizable()
   <div class="headertitle"><div class="title">memory.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implements the <a class="el" href="classMemory.html" title="Represents the memory unit of the LC-3 VM.">Memory</a> class methods for the LC-3 virtual machine.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="memory_8hpp_source.html">memory.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="keyboard_8hpp_source.html">keyboard.hpp</a>&quot;</code><br />
 <code>#include &lt;sys/select.h&gt;</code><br />
@@ -106,10 +109,10 @@ Include dependency graph for memory.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="memory_8cpp__incl.png" border="0" usemap="#amemory_8cpp" alt=""/></div>
 <map name="amemory_8cpp" id="amemory_8cpp">
-<area shape="rect" title=" " alt="" coords="320,5,423,31"/>
-<area shape="rect" href="memory_8hpp.html" title=" " alt="" coords="5,79,108,104"/>
+<area shape="rect" title="Implements the Memory class methods for the LC&#45;3 virtual machine." alt="" coords="320,5,423,31"/>
+<area shape="rect" href="memory_8hpp.html" title="Defines the Memory class for the LC&#45;3 virtual machine." alt="" coords="5,79,108,104"/>
 <area shape="poly" title=" " alt="" coords="321,33,121,78,120,73,320,28"/>
-<area shape="rect" href="keyboard_8hpp.html" title=" " alt="" coords="132,79,243,104"/>
+<area shape="rect" href="keyboard_8hpp.html" title="Defines constants and functions related to LC&#45;3 keyboard input." alt="" coords="132,79,243,104"/>
 <area shape="poly" title=" " alt="" coords="343,33,231,76,229,71,341,28"/>
 <area shape="rect" title=" " alt="" coords="267,79,366,104"/>
 <area shape="poly" title=" " alt="" coords="364,33,336,69,332,66,360,29"/>
@@ -132,7 +135,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a1823ce2f43d6adf3b167c5f75837eb93" id="r_a1823ce2f43d6adf3b167c5f75837eb93"><td class="memItemLeft" align="right" valign="top">std::uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8cpp.html#a1823ce2f43d6adf3b167c5f75837eb93">check_key</a> ()</td></tr>
 <tr class="separator:a1823ce2f43d6adf3b167c5f75837eb93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implements the <a class="el" href="classMemory.html" title="Represents the memory unit of the LC-3 VM.">Memory</a> class methods for the LC-3 virtual machine. </p>
+<p>This file contains the definitions for memory read and write operations, including handling for memory-mapped keyboard input. </p>
+
+<p class="definition">Definition in file <a class="el" href="memory_8cpp_source.html">memory.cpp</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a1823ce2f43d6adf3b167c5f75837eb93" name="a1823ce2f43d6adf3b167c5f75837eb93"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1823ce2f43d6adf3b167c5f75837eb93">&#9670;&#160;</a></span>check_key()</h2>
 
@@ -148,41 +156,41 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memory_8cpp_source.html#l00014">14</a> of file <a class="el" href="memory_8cpp_source.html">memory.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>                        {</div>
-<div class="line"><span class="lineno">   15</span>    fd_set readfds;</div>
-<div class="line"><span class="lineno">   16</span>    FD_ZERO(&amp;readfds);</div>
-<div class="line"><span class="lineno">   17</span>    FD_SET(STDIN_FILENO, &amp;readfds);</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    <span class="keyword">struct </span>timeval timeout;</div>
-<div class="line"><span class="lineno">   20</span>    timeout.tv_sec = 0;</div>
-<div class="line"><span class="lineno">   21</span>    timeout.tv_usec = 0;</div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">return</span> select(1, &amp;readfds, NULL, NULL, &amp;timeout) != 0;</div>
-<div class="line"><span class="lineno">   23</span>}</div>
+<p class="definition">Definition at line <a class="el" href="memory_8cpp_source.html#l00021">21</a> of file <a class="el" href="memory_8cpp_source.html">memory.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                        {</div>
+<div class="line"><span class="lineno">   22</span>    fd_set readfds;</div>
+<div class="line"><span class="lineno">   23</span>    FD_ZERO(&amp;readfds);</div>
+<div class="line"><span class="lineno">   24</span>    FD_SET(STDIN_FILENO, &amp;readfds);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <span class="keyword">struct </span>timeval timeout;</div>
+<div class="line"><span class="lineno">   27</span>    timeout.tv_sec = 0;</div>
+<div class="line"><span class="lineno">   28</span>    timeout.tv_usec = 0;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> select(1, &amp;readfds, NULL, NULL, &amp;timeout) != 0;</div>
+<div class="line"><span class="lineno">   30</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="memory_8cpp_source.html#l00025">Memory::read()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="memory_8cpp_source.html#l00032">Memory::read()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="memory_8cpp_a1823ce2f43d6adf3b167c5f75837eb93_icgraph.png" border="0" usemap="#amemory_8cpp_a1823ce2f43d6adf3b167c5f75837eb93_icgraph" alt=""/></div>
 <map name="amemory_8cpp_a1823ce2f43d6adf3b167c5f75837eb93_icgraph" id="amemory_8cpp_a1823ce2f43d6adf3b167c5f75837eb93_icgraph">
 <area shape="rect" title=" " alt="" coords="925,107,1016,132"/>
-<area shape="rect" href="classMemory.html#a7d7c6287a71c0c5c1bab82423d1de6d0" title=" " alt="" coords="765,107,877,132"/>
+<area shape="rect" href="classMemory.html#a7d7c6287a71c0c5c1bab82423d1de6d0" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="765,107,877,132"/>
 <area shape="poly" title=" " alt="" coords="912,122,878,122,878,117,912,117"/>
-<area shape="rect" href="classLC3State.html#a608043abe659369b614216e26c63aae1" title=" " alt="" coords="575,56,681,81"/>
+<area shape="rect" href="classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="575,56,681,81"/>
 <area shape="poly" title=" " alt="" coords="758,106,677,84,678,79,760,101"/>
-<area shape="rect" href="classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title=" " alt="" coords="347,107,463,132"/>
+<area shape="rect" href="classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="347,107,463,132"/>
 <area shape="poly" title=" " alt="" coords="752,122,463,122,463,117,752,117"/>
-<area shape="rect" href="classLC3State.html#ab42c2aeb6d3b5f10503a42bd22a58979" title=" " alt="" coords="539,157,717,183"/>
+<area shape="rect" href="classLC3State.html#ab42c2aeb6d3b5f10503a42bd22a58979" title="Reads a value from a specified memory address. Used for testing purposes." alt="" coords="539,157,717,183"/>
 <area shape="poly" title=" " alt="" coords="760,138,678,160,677,155,758,133"/>
-<area shape="rect" href="classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title=" " alt="" coords="320,5,491,31"/>
+<area shape="rect" href="classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title="Disassembles the instruction at a given memory address. (Currently not implemented)" alt="" coords="320,5,491,31"/>
 <area shape="poly" title=" " alt="" coords="561,56,461,33,462,28,562,51"/>
-<area shape="rect" href="classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title=" " alt="" coords="108,57,272,83"/>
+<area shape="rect" href="classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="108,57,272,83"/>
 <area shape="poly" title=" " alt="" coords="561,72,272,72,272,67,561,66"/>
 <area shape="poly" title=" " alt="" coords="562,86,462,109,461,104,561,81"/>
-<area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title=" " alt="" coords="5,83,60,108"/>
+<area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,83,60,108"/>
 <area shape="poly" title=" " alt="" coords="98,88,60,94,60,88,97,82"/>
-<area shape="rect" href="classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title=" " alt="" coords="135,107,245,132"/>
+<area shape="rect" href="classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="135,107,245,132"/>
 <area shape="poly" title=" " alt="" coords="334,122,245,122,245,117,334,117"/>
 <area shape="poly" title=" " alt="" coords="121,112,60,102,61,97,122,106"/>
 </map>

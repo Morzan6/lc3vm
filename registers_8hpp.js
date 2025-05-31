@@ -12,6 +12,5 @@ var registers_8hpp =
       [ "R_PC", "registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea97ac1589fd50b9c61b7cb75cc56279c4", null ],
       [ "R_COND", "registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1eacfd47122d343fd6527539f9d7dfd5b71", null ],
       [ "R_COUNT", "registers_8hpp.html#a19af2466c0539d02c49b0e9375bc6d1ea363d89b0884db37ebb8fd0d47e92c577", null ]
-    ] ],
-    [ "registers", "registers_8hpp.html#afa831239d2be1b0916cb7d61b7d46bba", null ]
+    ] ]
 ];

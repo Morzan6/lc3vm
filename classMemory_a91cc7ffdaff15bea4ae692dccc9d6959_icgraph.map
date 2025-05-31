@@ -1,19 +1,19 @@
 <map id="Memory::write" name="Memory::write">
-<area shape="rect" id="Node000001" title=" " alt="" coords="715,104,831,129"/>
-<area shape="rect" id="Node000002" href="$classLC3State.html#a608043abe659369b614216e26c63aae1" title=" " alt="" coords="522,53,629,79"/>
+<area shape="rect" id="Node000001" title="Writes a 16&#45;bit word to the specified memory address." alt="" coords="715,104,831,129"/>
+<area shape="rect" id="Node000002" href="$classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="522,53,629,79"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="709,103,625,81,626,76,710,98"/>
-<area shape="rect" id="Node000004" href="$classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title=" " alt="" coords="269,104,433,129"/>
+<area shape="rect" id="Node000004" href="$classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="269,104,433,129"/>
 <area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="701,119,433,119,433,114,701,114"/>
-<area shape="rect" id="Node000008" href="$classLC3State.html#a03f66a08f089d8f6cea1f1f62a3463ce" title=" " alt="" coords="484,155,667,180"/>
+<area shape="rect" id="Node000008" href="$classLC3State.html#a03f66a08f089d8f6cea1f1f62a3463ce" title="Writes a value to a specified memory address. Used for testing purposes." alt="" coords="484,155,667,180"/>
 <area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="710,135,626,157,625,152,709,130"/>
-<area shape="rect" id="Node000003" href="$classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title=" " alt="" coords="265,55,436,80"/>
+<area shape="rect" id="Node000003" href="$classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title="Disassembles the instruction at a given memory address. (Currently not implemented)" alt="" coords="265,55,436,80"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="508,69,436,69,436,64,508,64"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="509,84,408,107,407,101,508,78"/>
-<area shape="rect" id="Node000006" href="$classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title=" " alt="" coords="293,5,409,31"/>
+<area shape="rect" id="Node000006" href="$classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="293,5,409,31"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="508,55,408,33,409,28,509,49"/>
-<area shape="rect" id="Node000005" href="$main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title=" " alt="" coords="5,55,60,80"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,55,60,80"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="255,105,60,74,61,69,255,99"/>
-<area shape="rect" id="Node000007" href="$classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title=" " alt="" coords="108,17,217,43"/>
+<area shape="rect" id="Node000007" href="$classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="108,17,217,43"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="279,25,218,29,217,24,278,20"/>
 <area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="106,49,61,62,59,57,104,44"/>
 </map>
