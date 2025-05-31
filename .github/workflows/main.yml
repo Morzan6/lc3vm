@@ -1,0 +1,35 @@
+name: LC3 VM CI
+
+on:
+  push:
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y g++ make cmake libgtest-dev
+
+    - name: Build and install Google Test
+      run: |
+        cd /usr/src/googletest
+        sudo cmake .
+        sudo make
+        sudo cp lib/*.a /usr/lib 
+        sudo find /usr/src/googletest -name '*.a' -exec sudo cp {} /usr/lib \;
+
+    - name: Build the project
+      working-directory: ./lc3vm
+      run: make
+
+    - name: Run tests
+      working-directory: ./lc3vm
+      run: make test 
