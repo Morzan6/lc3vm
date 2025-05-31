@@ -3,9 +3,7 @@
 #include <vector>
 #include <csignal>
 #include "lc3.hpp"
-#include "terminal_io.hpp"
 
-// Global pointer to the VM for the signal handler
 LC3State* g_vm_ptr = nullptr;
 
 void handle_sigint(int sig) {
@@ -14,22 +12,12 @@ void handle_sigint(int sig) {
         if (g_vm_ptr) {
             g_vm_ptr->request_halt();
         }
-        // The TerminalIO destructor will handle restoring terminal settings.
-        // Forcing an exit here might prevent cleanup by RAII objects.
-        // If immediate exit is desired, consider std::quick_exit or other mechanisms
-        // after ensuring resources are released.
     }
 }
 
 int main(int argc, const char* argv[]) {
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <image_file1> [image_file2] ..." << std::endl;
-        return 1;
-    }
-
-    TerminalIO term_io;
-    if (!term_io.is_active()) {
-        std::cerr << "Failed to initialize terminal settings. Exiting." << std::endl;
         return 1;
     }
 

@@ -2,7 +2,7 @@
 #include "keyboard.hpp"
 #include <sys/select.h>
 #include <unistd.h>
-#include <cstdio> // For getchar
+#include <cstdio>
 #include <iostream>
 
 
