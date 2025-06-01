@@ -14,6 +14,15 @@
 #include "opcodes.hpp"
 #include <string>
 #include <array>
+#include <vector>
+
+/**
+ * @brief Represents a loaded code/data segment in memory.
+ */
+struct CodeSegment {
+    std::uint16_t start_address; ///< The starting memory address of the segment.
+    std::uint16_t size;          ///< The size of the segment in words.
+};
 
 /**
  * @brief Represents the state of an LC-3 virtual machine.
@@ -40,6 +49,7 @@ class LC3State {
         void update_flags(std::uint16_t r);
         bool running; ///< Flag indicating whether the LC-3 VM is currently running.
 
+        std::vector<CodeSegment> loaded_code_segments; ///< Stores info about loaded program segments.
      
         /**
          * @brief Table of function pointers for dispatching LC-3 opcodes.
@@ -88,10 +98,11 @@ class LC3State {
          * @brief Disassembles the instruction at a given memory address.
          * (Currently not implemented)
          * @param address The memory address of the instruction to disassemble.
+         * @return A string representation of the disassembled instruction.
          */
-        void disassemble(std::uint16_t address);
+        std::string disassemble(std::uint16_t address);
         /**
-         * @brief Disassembles all instructions in memory.
+         * @brief Disassembles all instructions in loaded memory segments.
          * (Currently not implemented)
          */
         void disassemble_all();

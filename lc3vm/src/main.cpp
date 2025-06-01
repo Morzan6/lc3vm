@@ -10,6 +10,8 @@
 #include <vector>
 #include <csignal>
 #include "lc3.hpp"
+#include "terminal_input.hpp"
+#include <cstdlib>
 
 /** 
  * @brief Global pointer to the LC3State instance.
@@ -29,6 +31,9 @@ void handle_sigint(int sig) {
         if (g_vm_ptr) {
             g_vm_ptr->request_halt();
         }
+        disable_raw_mode();
+        std::signal(sig, SIG_DFL);
+        std::raise(sig);
     }
 }
 
@@ -45,12 +50,20 @@ void handle_sigint(int sig) {
  */
 int main(int argc, const char* argv[]) {
     if (argc < 2) {
-        std::cerr << "Usage: " << argv[0] << " <image_file1> [image_file2] ..." << std::endl;
+        std::cerr << "Usage: " << argv[0] << " [-d|--disassemble] <image_file1> [image_file2] ..." << std::endl;
         return 1;
     }
 
     LC3State vm;
     g_vm_ptr = &vm;
+
+    try {
+        enable_raw_mode();
+        std::atexit(disable_raw_mode);
+    } catch (const std::exception& e) {
+        std::cerr << "Terminal Setup Error: " << e.what() << std::endl;
+        return 1;
+    }
 
     struct sigaction sa;
     sa.sa_handler = handle_sigint;
@@ -62,16 +75,36 @@ int main(int argc, const char* argv[]) {
         return 1;
     }
 
+    bool disassemble_mode = false;
+    int first_image_arg_index = 1;
+
+    if (argc > 1) {
+        std::string first_arg = argv[1];
+        if (first_arg == "-d" || first_arg == "--disassemble") {
+            disassemble_mode = true;
+            first_image_arg_index = 2;
+            if (argc < 3) {
+                 std::cerr << "Usage: " << argv[0] << " [-d|--disassemble] <image_file1> [image_file2] ..." << std::endl;
+                 std::cerr << "Error: At least one image file is required for disassembly." << std::endl;
+                 g_vm_ptr = nullptr;
+                 return 1;
+            }
+        }
+    }
+
     try {
-        for (int i = 1; i < argc; ++i) {
+        for (int i = first_image_arg_index; i < argc; ++i) {
             std::string filename = argv[i];
-            std::cout << "Loading image: " << filename << std::endl;
             vm.load_image(filename);
         }
 
-        std::cout << "Starting LC-3 VM..." << std::endl;
-        vm.run();
-        std::cout << "LC-3 VM halted." << std::endl;
+        if (disassemble_mode) {
+            vm.disassemble_all();
+        } else {
+            std::cout << "Starting LC-3 VM..." << std::endl;
+            vm.run();
+            std::cout << "LC-3 VM halted." << std::endl;
+        }
 
     } catch (const std::exception& e) {
         std::cerr << "VM Runtime Error: " << e.what() << std::endl;

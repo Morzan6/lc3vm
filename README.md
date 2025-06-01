@@ -74,6 +74,24 @@ To run an LC-3 object file:
 ./lc3vm/build/lc3vm path/to/your_program.obj [path/to/another_program.obj ...]
 ```
 
+## Disassembling Object Files
+
+The LC-3 VM can also disassemble `.obj` files, showing you the LC-3 assembly instructions corresponding to the machine code in the file. This is useful for inspecting programs or debugging.
+
+**How to use:**
+
+To disassemble one or more object files, use the `-d` or `--disassemble` flag followed by the path(s) to your `.obj` file(s):
+
+```bash
+./lc3vm/build/lc3vm -d path/to/your_program.obj
+```
+
+Or for multiple files:
+
+```bash
+./lc3vm/build/lc3vm --disassemble program1.obj program2.obj
+```
+
 ## Running Tests
 
 To compile and run the unit tests (from within the `lc3vm` directory):
