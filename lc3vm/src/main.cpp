@@ -45,7 +45,7 @@ void handle_sigint(int sig) {
  */
 int main(int argc, const char* argv[]) {
     if (argc < 2) {
-        std::cerr << "Usage: " << argv[0] << " <image_file1> [image_file2] ..." << std::endl;
+        std::cerr << "Usage: " << argv[0] << " [-d|--disassemble] <image_file1> [image_file2] ..." << std::endl;
         return 1;
     }
 
@@ -62,16 +62,38 @@ int main(int argc, const char* argv[]) {
         return 1;
     }
 
+    bool disassemble_mode = false;
+    int first_image_arg_index = 1;
+
+    if (argc > 1) {
+        std::string first_arg = argv[1];
+        if (first_arg == "-d" || first_arg == "--disassemble") {
+            disassemble_mode = true;
+            first_image_arg_index = 2;
+            if (argc < 3) {
+                 std::cerr << "Usage: " << argv[0] << " [-d|--disassemble] <image_file1> [image_file2] ..." << std::endl;
+                 std::cerr << "Error: At least one image file is required for disassembly." << std::endl;
+                 g_vm_ptr = nullptr;
+                 return 1;
+            }
+        }
+    }
+
     try {
-        for (int i = 1; i < argc; ++i) {
+        for (int i = first_image_arg_index; i < argc; ++i) {
             std::string filename = argv[i];
             std::cout << "Loading image: " << filename << std::endl;
             vm.load_image(filename);
         }
 
-        std::cout << "Starting LC-3 VM..." << std::endl;
-        vm.run();
-        std::cout << "LC-3 VM halted." << std::endl;
+        if (disassemble_mode) {
+            std::cout << "Disassembling memory..." << std::endl;
+            vm.disassemble_all();
+        } else {
+            std::cout << "Starting LC-3 VM..." << std::endl;
+            vm.run();
+            std::cout << "LC-3 VM halted." << std::endl;
+        }
 
     } catch (const std::exception& e) {
         std::cerr << "VM Runtime Error: " << e.what() << std::endl;

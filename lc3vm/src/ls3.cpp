@@ -18,6 +18,8 @@
 #include <array>
 #include "traps.hpp"
 #include "flags.hpp"
+#include <sstream>
+#include <iomanip>
 
 /**
  * @brief Swaps the endianness of a 16-bit unsigned integer.
@@ -235,6 +237,9 @@ void LC3State::load_image(const std::string &filename) {
             throw std::runtime_error("Image too large for memory at specified origin.");
         }
     }
+    if (words_actually_read > 0) {
+        loaded_code_segments.push_back({origin, static_cast<std::uint16_t>(words_actually_read)});
+    }
 }
 
 LC3State::LC3State() : memory(), reg{}, running(true) {
@@ -279,11 +284,143 @@ void LC3State::update_flags(std::uint16_t r_idx) {
     }
 }
 
-void LC3State::disassemble(std::uint16_t address) {
-    (void)address;
-    std::cout << "Disassembly not yet implemented." << std::endl;
+std::string LC3State::disassemble(std::uint16_t address) {
+    std::uint16_t instr = memory.read(address);
+    std::uint16_t opcode = instr >> 12;
+    std::ostringstream oss;
+
+    oss << "0x" << std::hex << std::setfill('0') << std::setw(4) << address << ": ";
+
+    switch (opcode) {
+        case OP_ADD: {
+            std::uint16_t dr = (instr >> 9) & 0x7;
+            std::uint16_t sr1 = (instr >> 6) & 0x7;
+            oss << "ADD R" << dr << ", R" << sr1 << ", ";
+            if ((instr >> 5) & 0x1) { // ADD imm
+                std::int16_t imm5 = static_cast<std::int16_t>(sign_extend(instr & 0x1F, 5));
+                oss << "#" << std::dec << imm5;
+            } else { // ADD reg
+                std::uint16_t sr2 = instr & 0x7;
+                oss << "R" << sr2;
+            }
+            break;
+        }
+        case OP_AND: {
+            std::uint16_t dr = (instr >> 9) & 0x7;
+            std::uint16_t sr1 = (instr >> 6) & 0x7;
+            oss << "AND R" << dr << ", R" << sr1 << ", ";
+            if ((instr >> 5) & 0x1) { // AND imm
+                std::int16_t imm5 = static_cast<std::int16_t>(sign_extend(instr & 0x1F, 5));
+                oss << "#" << std::dec << imm5;
+            } else { // AND reg
+                std::uint16_t sr2 = instr & 0x7;
+                oss << "R" << sr2;
+            }
+            break;
+        }
+        case OP_NOT: {
+            std::uint16_t dr = (instr >> 9) & 0x7;
+            std::uint16_t sr = (instr >> 6) & 0x7;
+            oss << "NOT R" << dr << ", R" << sr;
+            break;
+        }
+        case OP_BR: {
+            std::uint16_t n = (instr >> 11) & 0x1;
+            std::uint16_t z = (instr >> 10) & 0x1;
+            std::uint16_t p = (instr >> 9) & 0x1;
+            std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
+            oss << "BR" << (n ? "n" : "") << (z ? "z" : "") << (p ? "p" : "") << " 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            break;
+        }
+        case OP_JMP: { // Also handles RET
+            std::uint16_t base_r = (instr >> 6) & 0x7;
+            if (base_r == 7) { // RET
+                 oss << "RET";
+            } else {
+                 oss << "JMP R" << base_r;
+            }
+            break;
+        }
+        case OP_JSR: {
+            oss << "JSR ";
+            if ((instr >> 11) & 1) { // JSR
+                std::int16_t pc_offset11 = static_cast<std::int16_t>(sign_extend(instr & 0x7FF, 11));
+                oss << "0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset11);
+            } else { // JSRR
+                std::uint16_t base_r = (instr >> 6) & 0x7;
+                oss << "R" << base_r;
+            }
+            break;
+        }
+        case OP_LD: {
+            std::uint16_t dr = (instr >> 9) & 0x7;
+            std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
+            oss << "LD R" << dr << ", 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            break;
+        }
+        case OP_LDI: {
+            std::uint16_t dr = (instr >> 9) & 0x7;
+            std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
+            oss << "LDI R" << dr << ", 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            break;
+        }
+        case OP_LDR: {
+            std::uint16_t dr = (instr >> 9) & 0x7;
+            std::uint16_t base_r = (instr >> 6) & 0x7;
+            std::int16_t offset6 = static_cast<std::int16_t>(sign_extend(instr & 0x3F, 6));
+            oss << "LDR R" << dr << ", R" << base_r << ", #" << std::dec << offset6;
+            break;
+        }
+        case OP_LEA: {
+            std::uint16_t dr = (instr >> 9) & 0x7;
+            std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
+            oss << "LEA R" << dr << ", 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            break;
+        }
+        case OP_ST: {
+            std::uint16_t sr = (instr >> 9) & 0x7;
+            std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
+            oss << "ST R" << sr << ", 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            break;
+        }
+        case OP_STI: {
+            std::uint16_t sr = (instr >> 9) & 0x7;
+            std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
+            oss << "STI R" << sr << ", 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            break;
+        }
+        case OP_STR: {
+            std::uint16_t sr = (instr >> 9) & 0x7;
+            std::uint16_t base_r = (instr >> 6) & 0x7;
+            std::int16_t offset6 = static_cast<std::int16_t>(sign_extend(instr & 0x3F, 6));
+            oss << "STR R" << sr << ", R" << base_r << ", #" << std::dec << offset6;
+            break;
+        }
+        case OP_TRAP: {
+            oss << "TRAP x" << std::hex << std::setfill('0') << std::setw(2) << (instr & 0xFF);
+            break;
+        }
+        case OP_RES:
+        case OP_RTI:
+        default:
+            oss << "BAD OPCODE";
+            break;
+    }
+    return oss.str();
 }
 
 void LC3State::disassemble_all() {
-    std::cout << "Disassembly not yet implemented." << std::endl;
+    if (loaded_code_segments.empty()) {
+        std::cout << "No program images loaded. Nothing to disassemble." << std::endl;
+        return;
+    }
+
+    for (const auto& segment : loaded_code_segments) {
+        std::cout << "\nDisassembling segment from 0x" << std::hex << std::setfill('0') << std::setw(4) << segment.start_address 
+                  << " to 0x" << std::hex << std::setfill('0') << std::setw(4) << (segment.start_address + segment.size -1) << std::dec << ":\n";
+        for (std::uint16_t i = 0; i < segment.size; ++i) {
+            std::uint16_t current_address = segment.start_address + i;
+            std::cout << disassemble(current_address) << std::endl;
+        }
+    }
 }
