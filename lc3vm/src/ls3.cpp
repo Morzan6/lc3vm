@@ -18,7 +18,7 @@
 #include <array>
 #include "traps.hpp"
 #include "flags.hpp"
-#include <unistd.h> // For read() in TRAP_GETC/TRAP_IN
+#include <unistd.h>
 #include <sstream>
 #include <iomanip>
 

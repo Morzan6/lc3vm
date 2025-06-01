@@ -31,8 +31,7 @@ void handle_sigint(int sig) {
         if (g_vm_ptr) {
             g_vm_ptr->request_halt();
         }
-        disable_raw_mode(); // Restore terminal settings on SIGINT
-        // Re-raise signal for default termination (optional, but good practice)
+        disable_raw_mode();
         std::signal(sig, SIG_DFL);
         std::raise(sig);
     }
@@ -58,14 +57,12 @@ int main(int argc, const char* argv[]) {
     LC3State vm;
     g_vm_ptr = &vm;
 
-    // Attempt to enable raw mode right after VM is created
     try {
         enable_raw_mode();
-        std::atexit(disable_raw_mode); // Ensure raw mode is disabled on normal exit
+        std::atexit(disable_raw_mode);
     } catch (const std::exception& e) {
         std::cerr << "Terminal Setup Error: " << e.what() << std::endl;
-        // Not setting g_vm_ptr to nullptr here, as sigaction setup hasn't happened yet
-        return 1; // Exit if raw mode cannot be enabled
+        return 1;
     }
 
     struct sigaction sa;
@@ -113,12 +110,10 @@ int main(int argc, const char* argv[]) {
 
     } catch (const std::exception& e) {
         std::cerr << "VM Runtime Error: " << e.what() << std::endl;
-        // disable_raw_mode(); // Already handled by atexit for most cases
         g_vm_ptr = nullptr;
         return 1;
     }
 
-    // disable_raw_mode(); // Already handled by atexit
     g_vm_ptr = nullptr;
     return 0;
 }
