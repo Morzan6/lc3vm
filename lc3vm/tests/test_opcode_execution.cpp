@@ -6,39 +6,34 @@
 
 TEST(LC3VMTest, OP_ADD_Immediate) {
     LC3State vm;
-    // Setup: R1 = 5, R2 will be destination
     vm.set_register_value(R_R1, 5);
-    vm.set_register_value(R_R2, 0); // Clear destination
-    vm.set_register_value(R_PC, 0x3000); // Start PC
+    vm.set_register_value(R_R2, 0);
+    vm.set_register_value(R_PC, 0x3000);
 
-    // Instruction: ADD R2, R1, #10 (0001 010 001 10010 -> 0x14A2)
     std::uint16_t instr = (Opcodes::OP_ADD << 12) | (R_R2 << 9) | (R_R1 << 6) | (1 << 5) | 10;
     vm.write_memory(0x3000, instr);
 
-    vm.step(); // Execute the ADD instruction
+    vm.step();
 
-    EXPECT_EQ(vm.get_register_value(R_R2), 15); // 5 + 10 = 15
-    EXPECT_EQ(vm.get_register_value(R_COND), FL_POS); // Result is positive
-    EXPECT_EQ(vm.get_register_value(R_PC), 0x3001); // PC should increment
+    EXPECT_EQ(vm.get_register_value(R_R2), 15);
+    EXPECT_EQ(vm.get_register_value(R_COND), FL_POS);
+    EXPECT_EQ(vm.get_register_value(R_PC), 0x3001);
 }
 
 TEST(LC3VMTest, OP_ADD_Register) {
     LC3State vm;
-    // Setup: R1 = 5, R3 = 7, R2 will be destination
     vm.set_register_value(R_R1, 5);
     vm.set_register_value(R_R3, 7);
-    vm.set_register_value(R_R2, 0); // Clear destination
-    vm.set_register_value(R_PC, 0x3000); // Start PC
+    vm.set_register_value(R_R2, 0);
 
-    // Instruction: ADD R2, R1, R3 (0001 010 001 000 011 -> 0x14C3)
     std::uint16_t instr = (Opcodes::OP_ADD << 12) | (R_R2 << 9) | (R_R1 << 6) | R_R3;
     vm.write_memory(0x3000, instr);
 
-    vm.step(); // Execute the ADD instruction
+    vm.step();
 
-    EXPECT_EQ(vm.get_register_value(R_R2), 12); // 5 + 7 = 12
-    EXPECT_EQ(vm.get_register_value(R_COND), FL_POS); // Result is positive
-    EXPECT_EQ(vm.get_register_value(R_PC), 0x3001); // PC should increment
+    EXPECT_EQ(vm.get_register_value(R_R2), 12);
+    EXPECT_EQ(vm.get_register_value(R_COND), FL_POS);
+    EXPECT_EQ(vm.get_register_value(R_PC), 0x3001);
 }
 
 TEST(LC3VMTest, OP_LD_LoadDirect) {
@@ -180,12 +175,11 @@ TEST(LC3VMTest, OP_BR_BranchNotTaken) {
     EXPECT_EQ(vm.get_register_value(R_PC), 0x3001);
 }
 
-// Test for BR instruction offsets and conditions
 TEST(LC3VMTest, OP_BR_BranchIfZero) {
     LC3State vm;
     vm.set_register_value(R_PC, 0x3000);
     vm.set_register_value(R_COND, FL_ZRO);
-    std::uint16_t instr = (Opcodes::OP_BR << 12) | (FL_ZRO << 9) | 10; // BRz #10
+    std::uint16_t instr = (Opcodes::OP_BR << 12) | (FL_ZRO << 9) | 10;
     vm.write_memory(0x3000, instr);
     vm.step();
     EXPECT_EQ(vm.get_register_value(R_PC), 0x3001 + 10);

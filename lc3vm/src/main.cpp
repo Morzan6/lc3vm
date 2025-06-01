@@ -10,8 +10,8 @@
 #include <vector>
 #include <csignal>
 #include "lc3.hpp"
-#include "terminal_input.hpp" // For raw terminal mode
-#include <cstdlib> // For std::atexit
+#include "terminal_input.hpp"
+#include <cstdlib>
 
 /** 
  * @brief Global pointer to the LC3State instance.

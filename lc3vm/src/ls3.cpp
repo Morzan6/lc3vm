@@ -300,10 +300,10 @@ std::string LC3State::disassemble(std::uint16_t address) {
             std::uint16_t dr = (instr >> 9) & 0x7;
             std::uint16_t sr1 = (instr >> 6) & 0x7;
             oss << "ADD R" << dr << ", R" << sr1 << ", ";
-            if ((instr >> 5) & 0x1) { // ADD imm
+            if ((instr >> 5) & 0x1) {
                 std::int16_t imm5 = static_cast<std::int16_t>(sign_extend(instr & 0x1F, 5));
                 oss << "#" << std::dec << imm5;
-            } else { // ADD reg
+            } else {
                 std::uint16_t sr2 = instr & 0x7;
                 oss << "R" << sr2;
             }
@@ -313,10 +313,10 @@ std::string LC3State::disassemble(std::uint16_t address) {
             std::uint16_t dr = (instr >> 9) & 0x7;
             std::uint16_t sr1 = (instr >> 6) & 0x7;
             oss << "AND R" << dr << ", R" << sr1 << ", ";
-            if ((instr >> 5) & 0x1) { // AND imm
+            if ((instr >> 5) & 0x1) {
                 std::int16_t imm5 = static_cast<std::int16_t>(sign_extend(instr & 0x1F, 5));
                 oss << "#" << std::dec << imm5;
-            } else { // AND reg
+            } else {
                 std::uint16_t sr2 = instr & 0x7;
                 oss << "R" << sr2;
             }
@@ -336,9 +336,9 @@ std::string LC3State::disassemble(std::uint16_t address) {
             oss << "BR" << (n ? "n" : "") << (z ? "z" : "") << (p ? "p" : "") << " 0x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
             break;
         }
-        case OP_JMP: { // Also handles RET
+        case OP_JMP: {
             std::uint16_t base_r = (instr >> 6) & 0x7;
-            if (base_r == 7) { // RET
+            if (base_r == 7) {
                  oss << "RET";
             } else {
                  oss << "JMP R" << base_r;
@@ -347,10 +347,10 @@ std::string LC3State::disassemble(std::uint16_t address) {
         }
         case OP_JSR: {
             oss << "JSR ";
-            if ((instr >> 11) & 1) { // JSR
+            if ((instr >> 11) & 1) {
                 std::int16_t pc_offset11 = static_cast<std::int16_t>(sign_extend(instr & 0x7FF, 11));
                 oss << "0x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset11);
-            } else { // JSRR
+            } else {
                 std::uint16_t base_r = (instr >> 6) & 0x7;
                 oss << "R" << base_r;
             }
