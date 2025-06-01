@@ -1,19 +1,24 @@
 <map id="Memory::read" name="Memory::read">
-<area shape="rect" id="Node000001" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="765,107,877,132"/>
-<area shape="rect" id="Node000002" href="$classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="575,56,681,81"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="758,106,677,84,678,79,760,101"/>
-<area shape="rect" id="Node000006" href="$classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="347,107,463,132"/>
-<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="752,122,463,122,463,117,752,117"/>
-<area shape="rect" id="Node000008" href="$classLC3State.html#ab42c2aeb6d3b5f10503a42bd22a58979" title="Reads a value from a specified memory address. Used for testing purposes." alt="" coords="539,157,717,183"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="760,138,678,160,677,155,758,133"/>
-<area shape="rect" id="Node000003" href="$classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title="Disassembles the instruction at a given memory address. (Currently not implemented)" alt="" coords="320,5,491,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="561,56,461,33,462,28,562,51"/>
-<area shape="rect" id="Node000004" href="$classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="108,57,272,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="561,72,272,72,272,67,561,66"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="562,86,462,109,461,104,561,81"/>
-<area shape="rect" id="Node000005" href="$main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,83,60,108"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="98,88,60,94,60,88,97,82"/>
-<area shape="rect" id="Node000007" href="$classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="135,107,245,132"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="334,122,245,122,245,117,334,117"/>
-<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="121,112,60,102,61,97,122,106"/>
+<area shape="rect" id="Node000001" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="795,120,907,145"/>
+<area shape="rect" id="Node000002" href="$classLC3State.html#a1996ce581e6cf1e72d5d9b4fffd7cfed" title="Disassembles the instruction at a given memory address. (Currently not implemented)" alt="" coords="349,5,520,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="814,116,746,86,629,54,520,33,521,28,630,49,748,81,816,111"/>
+<area shape="rect" id="Node000005" href="$classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="604,95,711,120"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="781,126,711,117,711,112,781,121"/>
+<area shape="rect" id="Node000007" href="$classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="377,157,493,183"/>
+<area shape="poly" id="edge13_Node000001_Node000007" title=" " alt="" coords="781,141,493,168,493,162,781,136"/>
+<area shape="rect" id="Node000009" href="$classLC3State.html#ab42c2aeb6d3b5f10503a42bd22a58979" title="Reads a value from a specified memory address. Used for testing purposes." alt="" coords="568,196,747,221"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="809,153,748,179,696,198,694,193,746,174,807,148"/>
+<area shape="rect" id="Node000003" href="$classLC3State.html#afbcac5fbedee43b6a5498c88aaec4ecc" title="Disassembles all instructions in loaded memory segments. (Currently not implemented)" alt="" coords="108,56,301,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="363,36,264,59,262,53,362,31"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,107,60,132"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="144,88,109,98,61,113,59,108,107,93,142,83"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="613,92,519,52,469,33,471,28,521,48,615,87"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="590,103,520,97,301,79,302,73,520,91,590,98"/>
+<area shape="rect" id="Node000006" href="$classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="123,107,287,132"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="591,112,287,120,287,115,590,106"/>
+<area shape="poly" id="edge9_Node000005_Node000007" title=" " alt="" coords="599,126,482,160,480,155,598,121"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="109,122,60,122,60,117,109,117"/>
+<area shape="rect" id="Node000008" href="$classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="150,156,259,181"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="363,172,260,172,260,166,363,167"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="136,155,107,147,59,131,61,126,109,142,137,150"/>
 </map>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['write_0',['write',['../classMemory.html#a91cc7ffdaff15bea4ae692dccc9d6959',1,'Memory']]],
-  ['write_5fmemory_1',['write_memory',['../classLC3State.html#a03f66a08f089d8f6cea1f1f62a3463ce',1,'LC3State']]]
+  ['virtual_20machine_20lc3vm_0',['LC-3 Virtual Machine (lc3vm)',['../index.html',1,'']]],
+  ['vm_1',['Running the VM',['../index.html#autotoc_md5',1,'']]]
 ];

@@ -1,5 +1,7 @@
 <map id="handle_sigint" name="handle_sigint">
-<area shape="rect" id="Node000001" title="Signal handler for SIGINT (Ctrl+C). Requests the LC&#45;3 VM to halt its execution gracefully." alt="" coords="5,5,115,31"/>
-<area shape="rect" id="Node000002" href="$classLC3State.html#ad12c3ef681a4edd04a2284b03f48ddb9" title="Requests the VM to halt execution after the current instruction. Sets the internal running flag to fa..." alt="" coords="163,5,332,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,15,149,15,149,21,115,21"/>
+<area shape="rect" id="Node000001" title="Signal handler for SIGINT (Ctrl+C). Requests the LC&#45;3 VM to halt its execution gracefully." alt="" coords="5,31,115,56"/>
+<area shape="rect" id="Node000002" href="$terminal__input_8cpp.html#abe709e6bcc6b857e4f01fd60b6428fad" title="Disables raw input mode, restoring original terminal settings. This function should be called before ..." alt="" coords="175,5,319,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,33,161,27,162,32,115,39"/>
+<area shape="rect" id="Node000003" href="$classLC3State.html#ad12c3ef681a4edd04a2284b03f48ddb9" title="Requests the VM to halt execution after the current instruction. Sets the internal running flag to fa..." alt="" coords="163,55,332,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,48,149,52,149,57,114,53"/>
 </map>

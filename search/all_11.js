@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['virtual_20machine_20lc3vm_0',['LC-3 Virtual Machine (lc3vm)',['../index.html',1,'']]],
-  ['vm_1',['Running the VM',['../index.html#autotoc_md5',1,'']]]
+  ['update_5fflags_0',['update_flags',['../classLC3State.html#a862e7458e94a8a1355b7fb3324ee0136',1,'LC3State']]]
 ];

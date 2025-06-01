@@ -1,0 +1,8 @@
+<map id="disable_raw_mode" name="disable_raw_mode">
+<area shape="rect" id="Node000001" title="Disables raw input mode, restoring original terminal settings. This function should be called before ..." alt="" coords="265,31,409,56"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a8bfc90b3fb9344e9caafec953baacc0b" title="Signal handler for SIGINT (Ctrl+C). Requests the LC&#45;3 VM to halt its execution gracefully." alt="" coords="108,5,217,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,34,217,29,218,23,252,28"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="252,46,60,46,60,41,252,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,34,61,41,60,36,94,29"/>
+</map>

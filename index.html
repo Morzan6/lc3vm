@@ -157,10 +157,18 @@ Running the VM</h1>
 <p>To run an LC-3 object file:</p>
 <div class="fragment"><div class="line">./lc3vm/build/lc3vm path/to/your_program.obj [path/to/another_program.obj ...]</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+Disassembling Object Files</h1>
+<p>The LC-3 VM can also disassemble <code>.obj</code> files, showing you the LC-3 assembly instructions corresponding to the machine code in the file. This is useful for inspecting programs or debugging.</p>
+<p><b>How to use:</b></p>
+<p>To disassemble one or more object files, use the <code>-d</code> or <code>--disassemble</code> flag followed by the path(s) to your <code>.obj</code> file(s):</p>
+<div class="fragment"><div class="line">./lc3vm/build/lc3vm -d path/to/your_program.obj</div>
+</div><!-- fragment --><p>Or for multiple files:</p>
+<div class="fragment"><div class="line">./lc3vm/build/lc3vm --disassemble program1.obj program2.obj</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
 Running Tests</h1>
 <p>To compile and run the unit tests (from within the <code>lc3vm</code> directory):</p>
 <div class="fragment"><div class="line">make test</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
 Project Structure</h1>
 <div class="fragment"><div class="line">.</div>
 <div class="line">├── .github/            # GitHub Actions workflows</div>

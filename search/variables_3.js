@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['reg_0',['reg',['../classLC3State.html#a7da6f54ef57b3d841fec5dc9504b0895',1,'LC3State']]],
-  ['running_1',['running',['../classLC3State.html#ab1b3d63525bd837dc7f987d62ea02876',1,'LC3State']]]
+  ['op_5ftable_0',['op_table',['../classLC3State.html#aca3408b7063677c8e3c693cb57fa3e82',1,'LC3State']]],
+  ['original_5ftermios_1',['original_termios',['../terminal__input_8cpp.html#a07853ed4a90cb9bb09bb00dd6a8c209c',1,'terminal_input.cpp']]]
 ];

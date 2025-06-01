@@ -2,7 +2,7 @@ var classLC3State =
 [
     [ "LC3State", "classLC3State.html#a1e347e4ea2670e32f3506017632ddac4", null ],
     [ "~LC3State", "classLC3State.html#ac39a115026e6b2b1c8a5aba06b1bc1b6", null ],
-    [ "disassemble", "classLC3State.html#a27c0297cb5210bd4b67f82a445035e92", null ],
+    [ "disassemble", "classLC3State.html#a1996ce581e6cf1e72d5d9b4fffd7cfed", null ],
     [ "disassemble_all", "classLC3State.html#afbcac5fbedee43b6a5498c88aaec4ecc", null ],
     [ "get_register_value", "classLC3State.html#a9c1af4dd579de5d388518f654b958f06", null ],
     [ "ins", "classLC3State.html#a608043abe659369b614216e26c63aae1", null ],
@@ -15,6 +15,7 @@ var classLC3State =
     [ "step", "classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466", null ],
     [ "update_flags", "classLC3State.html#a862e7458e94a8a1355b7fb3324ee0136", null ],
     [ "write_memory", "classLC3State.html#a03f66a08f089d8f6cea1f1f62a3463ce", null ],
+    [ "loaded_code_segments", "classLC3State.html#a2379139da988758d086b72256694f8d7", null ],
     [ "memory", "classLC3State.html#aeec474d549e52b95592a36511e293820", null ],
     [ "op_table", "classLC3State.html#aca3408b7063677c8e3c693cb57fa3e82", null ],
     [ "reg", "classLC3State.html#a7da6f54ef57b3d841fec5dc9504b0895", null ],

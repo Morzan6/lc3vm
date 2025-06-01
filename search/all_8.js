@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['keyboard_0',['Keyboard',['../keyboard_8hpp.html#abcabfff8e6138e0943763148d70e5005',1,'keyboard.hpp']]],
-  ['keyboard_2ehpp_1',['keyboard.hpp',['../keyboard_8hpp.html',1,'']]]
+  ['ins_0',['ins',['../classLC3State.html#a608043abe659369b614216e26c63aae1',1,'LC3State']]]
 ];

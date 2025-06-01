@@ -171,7 +171,7 @@ Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="memory_8cpp_source.html#l00021">check_key()</a>, <a class="el" href="memory_8hpp_source.html#l00026">memory</a>, <a class="el" href="keyboard_8hpp_source.html#l00016">MR_KBDR</a>, and <a class="el" href="keyboard_8hpp_source.html#l00015">MR_KBSR</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ls3_8cpp_source.html#l00033">LC3State::ins()</a>, <a class="el" href="lc3_8hpp_source.html#l00142">LC3State::read_memory()</a>, and <a class="el" href="ls3_8cpp_source.html#l00255">LC3State::step()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ls3_8cpp_source.html#l00291">LC3State::disassemble()</a>, <a class="el" href="ls3_8cpp_source.html#l00036">LC3State::ins()</a>, <a class="el" href="lc3_8hpp_source.html#l00153">LC3State::read_memory()</a>, and <a class="el" href="ls3_8cpp_source.html#l00264">LC3State::step()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -187,23 +187,28 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_icgraph.png" border="0" usemap="#aclassMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_icgraph" alt=""/></div>
 <map name="aclassMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_icgraph" id="aclassMemory_a7d7c6287a71c0c5c1bab82423d1de6d0_icgraph">
-<area shape="rect" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="765,107,877,132"/>
-<area shape="rect" href="classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="575,56,681,81"/>
-<area shape="poly" title=" " alt="" coords="758,106,677,84,678,79,760,101"/>
-<area shape="rect" href="classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="347,107,463,132"/>
-<area shape="poly" title=" " alt="" coords="752,122,463,122,463,117,752,117"/>
-<area shape="rect" href="classLC3State.html#ab42c2aeb6d3b5f10503a42bd22a58979" title="Reads a value from a specified memory address. Used for testing purposes." alt="" coords="539,157,717,183"/>
-<area shape="poly" title=" " alt="" coords="760,138,678,160,677,155,758,133"/>
-<area shape="rect" href="classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title="Disassembles the instruction at a given memory address. (Currently not implemented)" alt="" coords="320,5,491,31"/>
-<area shape="poly" title=" " alt="" coords="561,56,461,33,462,28,562,51"/>
-<area shape="rect" href="classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="108,57,272,83"/>
-<area shape="poly" title=" " alt="" coords="561,72,272,72,272,67,561,66"/>
-<area shape="poly" title=" " alt="" coords="562,86,462,109,461,104,561,81"/>
-<area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,83,60,108"/>
-<area shape="poly" title=" " alt="" coords="98,88,60,94,60,88,97,82"/>
-<area shape="rect" href="classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="135,107,245,132"/>
-<area shape="poly" title=" " alt="" coords="334,122,245,122,245,117,334,117"/>
-<area shape="poly" title=" " alt="" coords="121,112,60,102,61,97,122,106"/>
+<area shape="rect" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="795,120,907,145"/>
+<area shape="rect" href="classLC3State.html#a1996ce581e6cf1e72d5d9b4fffd7cfed" title="Disassembles the instruction at a given memory address. (Currently not implemented)" alt="" coords="349,5,520,31"/>
+<area shape="poly" title=" " alt="" coords="814,116,746,86,629,54,520,33,521,28,630,49,748,81,816,111"/>
+<area shape="rect" href="classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="604,95,711,120"/>
+<area shape="poly" title=" " alt="" coords="781,126,711,117,711,112,781,121"/>
+<area shape="rect" href="classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="377,157,493,183"/>
+<area shape="poly" title=" " alt="" coords="781,141,493,168,493,162,781,136"/>
+<area shape="rect" href="classLC3State.html#ab42c2aeb6d3b5f10503a42bd22a58979" title="Reads a value from a specified memory address. Used for testing purposes." alt="" coords="568,196,747,221"/>
+<area shape="poly" title=" " alt="" coords="809,153,748,179,696,198,694,193,746,174,807,148"/>
+<area shape="rect" href="classLC3State.html#afbcac5fbedee43b6a5498c88aaec4ecc" title="Disassembles all instructions in loaded memory segments. (Currently not implemented)" alt="" coords="108,56,301,81"/>
+<area shape="poly" title=" " alt="" coords="363,36,264,59,262,53,362,31"/>
+<area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,107,60,132"/>
+<area shape="poly" title=" " alt="" coords="144,88,109,98,61,113,59,108,107,93,142,83"/>
+<area shape="poly" title=" " alt="" coords="613,92,519,52,469,33,471,28,521,48,615,87"/>
+<area shape="poly" title=" " alt="" coords="590,103,520,97,301,79,302,73,520,91,590,98"/>
+<area shape="rect" href="classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="123,107,287,132"/>
+<area shape="poly" title=" " alt="" coords="591,112,287,120,287,115,590,106"/>
+<area shape="poly" title=" " alt="" coords="599,126,482,160,480,155,598,121"/>
+<area shape="poly" title=" " alt="" coords="109,122,60,122,60,117,109,117"/>
+<area shape="rect" href="classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="150,156,259,181"/>
+<area shape="poly" title=" " alt="" coords="363,172,260,172,260,166,363,167"/>
+<area shape="poly" title=" " alt="" coords="136,155,107,147,59,131,61,126,109,142,137,150"/>
 </map>
 </div>
 
@@ -251,29 +256,33 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="memory_8hpp_source.html#l00026">memory</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ls3_8cpp_source.html#l00033">LC3State::ins()</a>, <a class="el" href="ls3_8cpp_source.html#l00212">LC3State::load_image()</a>, and <a class="el" href="lc3_8hpp_source.html#l00133">LC3State::write_memory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ls3_8cpp_source.html#l00036">LC3State::ins()</a>, <a class="el" href="ls3_8cpp_source.html#l00218">LC3State::load_image()</a>, and <a class="el" href="lc3_8hpp_source.html#l00144">LC3State::write_memory()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemory_a91cc7ffdaff15bea4ae692dccc9d6959_icgraph.png" border="0" usemap="#aclassMemory_a91cc7ffdaff15bea4ae692dccc9d6959_icgraph" alt=""/></div>
 <map name="aclassMemory_a91cc7ffdaff15bea4ae692dccc9d6959_icgraph" id="aclassMemory_a91cc7ffdaff15bea4ae692dccc9d6959_icgraph">
-<area shape="rect" title="Writes a 16&#45;bit word to the specified memory address." alt="" coords="715,104,831,129"/>
-<area shape="rect" href="classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="522,53,629,79"/>
-<area shape="poly" title=" " alt="" coords="709,103,625,81,626,76,710,98"/>
-<area shape="rect" href="classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="269,104,433,129"/>
-<area shape="poly" title=" " alt="" coords="701,119,433,119,433,114,701,114"/>
-<area shape="rect" href="classLC3State.html#a03f66a08f089d8f6cea1f1f62a3463ce" title="Writes a value to a specified memory address. Used for testing purposes." alt="" coords="484,155,667,180"/>
-<area shape="poly" title=" " alt="" coords="710,135,626,157,625,152,709,130"/>
-<area shape="rect" href="classLC3State.html#a27c0297cb5210bd4b67f82a445035e92" title="Disassembles the instruction at a given memory address. (Currently not implemented)" alt="" coords="265,55,436,80"/>
-<area shape="poly" title=" " alt="" coords="508,69,436,69,436,64,508,64"/>
-<area shape="poly" title=" " alt="" coords="509,84,408,107,407,101,508,78"/>
-<area shape="rect" href="classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="293,5,409,31"/>
-<area shape="poly" title=" " alt="" coords="508,55,408,33,409,28,509,49"/>
-<area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,55,60,80"/>
-<area shape="poly" title=" " alt="" coords="255,105,60,74,61,69,255,99"/>
-<area shape="rect" href="classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="108,17,217,43"/>
-<area shape="poly" title=" " alt="" coords="279,25,218,29,217,24,278,20"/>
-<area shape="poly" title=" " alt="" coords="106,49,61,62,59,57,104,44"/>
+<area shape="rect" title="Writes a 16&#45;bit word to the specified memory address." alt="" coords="799,156,915,181"/>
+<area shape="rect" href="classLC3State.html#a608043abe659369b614216e26c63aae1" title="Executes a specific LC&#45;3 instruction. This is a template function specialized for each opcode." alt="" coords="606,105,713,131"/>
+<area shape="poly" title=" " alt="" coords="793,155,709,133,710,128,794,150"/>
+<area shape="rect" href="classLC3State.html#ad4e44daa80534137d415ab31e970fa9b" title="Loads an LC&#45;3 program image into memory." alt="" coords="353,156,517,181"/>
+<area shape="poly" title=" " alt="" coords="785,171,517,171,517,166,785,166"/>
+<area shape="rect" href="classLC3State.html#a03f66a08f089d8f6cea1f1f62a3463ce" title="Writes a value to a specified memory address. Used for testing purposes." alt="" coords="568,207,751,232"/>
+<area shape="poly" title=" " alt="" coords="794,187,710,209,709,204,793,182"/>
+<area shape="rect" href="classLC3State.html#a1996ce581e6cf1e72d5d9b4fffd7cfed" title="Disassembles the instruction at a given memory address. (Currently not implemented)" alt="" coords="349,55,520,80"/>
+<area shape="poly" title=" " alt="" coords="592,106,491,83,492,77,593,100"/>
+<area shape="rect" href="classLC3State.html#afbcac5fbedee43b6a5498c88aaec4ecc" title="Disassembles all instructions in loaded memory segments. (Currently not implemented)" alt="" coords="108,68,301,93"/>
+<area shape="poly" title=" " alt="" coords="592,115,349,95,301,91,302,86,350,90,592,110"/>
+<area shape="poly" title=" " alt="" coords="593,136,492,159,491,153,592,130"/>
+<area shape="rect" href="classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466" title="Executes a single LC&#45;3 instruction. Fetches the instruction at PC, increments PC, and executes the in..." alt="" coords="377,5,493,31"/>
+<area shape="poly" title=" " alt="" coords="625,100,576,72,519,44,487,33,489,28,521,40,579,67,628,96"/>
+<area shape="poly" title=" " alt="" coords="336,76,302,78,301,72,336,70"/>
+<area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,68,60,93"/>
+<area shape="poly" title=" " alt="" coords="94,83,60,83,60,78,94,78"/>
+<area shape="poly" title=" " alt="" coords="339,157,227,136,107,109,59,93,61,88,109,103,228,131,340,151"/>
+<area shape="rect" href="classLC3State.html#a926721399e17cfc81701d094fbb64d4f" title="Runs the LC&#45;3 virtual machine until halted. Continuously fetches, decodes, and executes instructions." alt="" coords="150,12,259,37"/>
+<area shape="poly" title=" " alt="" coords="363,23,260,26,260,20,363,17"/>
+<area shape="poly" title=" " alt="" coords="151,44,109,58,61,74,59,69,107,53,150,39"/>
 </map>
 </div>
 

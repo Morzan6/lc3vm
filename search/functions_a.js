@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['write_0',['write',['../classMemory.html#a91cc7ffdaff15bea4ae692dccc9d6959',1,'Memory']]],
-  ['write_5fmemory_1',['write_memory',['../classLC3State.html#a03f66a08f089d8f6cea1f1f62a3463ce',1,'LC3State']]]
+  ['update_5fflags_0',['update_flags',['../classLC3State.html#a862e7458e94a8a1355b7fb3324ee0136',1,'LC3State']]]
 ];
