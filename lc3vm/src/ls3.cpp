@@ -420,8 +420,6 @@ void LC3State::disassemble_all() {
     }
 
     for (const auto& segment : loaded_code_segments) {
-        std::cout << "\nDisassembling segment from 0x" << std::hex << std::setfill('0') << std::setw(4) << segment.start_address 
-                  << " to 0x" << std::hex << std::setfill('0') << std::setw(4) << (segment.start_address + segment.size -1) << std::dec << ":\n";
         for (std::uint16_t i = 0; i < segment.size; ++i) {
             std::uint16_t current_address = segment.start_address + i;
             std::cout << disassemble(current_address) << std::endl;

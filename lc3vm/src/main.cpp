@@ -95,12 +95,10 @@ int main(int argc, const char* argv[]) {
     try {
         for (int i = first_image_arg_index; i < argc; ++i) {
             std::string filename = argv[i];
-            std::cout << "Loading image: " << filename << std::endl;
             vm.load_image(filename);
         }
 
         if (disassemble_mode) {
-            std::cout << "Disassembling memory..." << std::endl;
             vm.disassemble_all();
         } else {
             std::cout << "Starting LC-3 VM..." << std::endl;
