@@ -293,7 +293,7 @@ std::string LC3State::disassemble(std::uint16_t address) {
     std::uint16_t opcode = instr >> 12;
     std::ostringstream oss;
 
-    oss << "0x" << std::hex << std::setfill('0') << std::setw(4) << address << ": ";
+    oss << "0x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(4) << address << ": ";
 
     switch (opcode) {
         case OP_ADD: {
@@ -333,7 +333,7 @@ std::string LC3State::disassemble(std::uint16_t address) {
             std::uint16_t z = (instr >> 10) & 0x1;
             std::uint16_t p = (instr >> 9) & 0x1;
             std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
-            oss << "BR" << (n ? "n" : "") << (z ? "z" : "") << (p ? "p" : "") << " 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            oss << "BR" << (n ? "n" : "") << (z ? "z" : "") << (p ? "p" : "") << " 0x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
             break;
         }
         case OP_JMP: { // Also handles RET
@@ -349,7 +349,7 @@ std::string LC3State::disassemble(std::uint16_t address) {
             oss << "JSR ";
             if ((instr >> 11) & 1) { // JSR
                 std::int16_t pc_offset11 = static_cast<std::int16_t>(sign_extend(instr & 0x7FF, 11));
-                oss << "0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset11);
+                oss << "0x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset11);
             } else { // JSRR
                 std::uint16_t base_r = (instr >> 6) & 0x7;
                 oss << "R" << base_r;
@@ -359,13 +359,13 @@ std::string LC3State::disassemble(std::uint16_t address) {
         case OP_LD: {
             std::uint16_t dr = (instr >> 9) & 0x7;
             std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
-            oss << "LD R" << dr << ", 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            oss << "LD R" << dr << ", 0x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
             break;
         }
         case OP_LDI: {
             std::uint16_t dr = (instr >> 9) & 0x7;
             std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
-            oss << "LDI R" << dr << ", 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            oss << "LDI R" << dr << ", 0x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
             break;
         }
         case OP_LDR: {
@@ -378,19 +378,19 @@ std::string LC3State::disassemble(std::uint16_t address) {
         case OP_LEA: {
             std::uint16_t dr = (instr >> 9) & 0x7;
             std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
-            oss << "LEA R" << dr << ", 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            oss << "LEA R" << dr << ", 0x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
             break;
         }
         case OP_ST: {
             std::uint16_t sr = (instr >> 9) & 0x7;
             std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
-            oss << "ST R" << sr << ", 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            oss << "ST R" << sr << ", 0x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
             break;
         }
         case OP_STI: {
             std::uint16_t sr = (instr >> 9) & 0x7;
             std::int16_t pc_offset9 = static_cast<std::int16_t>(sign_extend(instr & 0x1FF, 9));
-            oss << "STI R" << sr << ", 0x" << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
+            oss << "STI R" << sr << ", 0x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(4) << (address + 1 + pc_offset9);
             break;
         }
         case OP_STR: {
@@ -401,7 +401,7 @@ std::string LC3State::disassemble(std::uint16_t address) {
             break;
         }
         case OP_TRAP: {
-            oss << "TRAP x" << std::hex << std::setfill('0') << std::setw(2) << (instr & 0xFF);
+            oss << "TRAP x" << std::nouppercase << std::hex << std::setfill('0') << std::setw(2) << (instr & 0xFF);
             break;
         }
         case OP_RES:
