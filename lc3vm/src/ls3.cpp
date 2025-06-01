@@ -18,6 +18,7 @@
 #include <array>
 #include "traps.hpp"
 #include "flags.hpp"
+#include <unistd.h> // For read() in TRAP_GETC/TRAP_IN
 #include <sstream>
 #include <iomanip>
 
@@ -134,9 +135,10 @@ void LC3State::ins(LC3State& state, std::uint16_t instr) {
         switch (instr & 0xFF) {
             case TRAP_GETC:
                 {
-                    char c_in;
-                    std::cin.get(c_in);
-                    state.reg[R_R0] = static_cast<std::uint16_t>(c_in);
+                    char c_in = 0;
+                    if (read(STDIN_FILENO, &c_in, 1) == 1) {
+                        state.reg[R_R0] = static_cast<std::uint16_t>(c_in);
+                    }
                 }
                 state.update_flags(R_R0);
                 break;
@@ -157,11 +159,13 @@ void LC3State::ins(LC3State& state, std::uint16_t instr) {
             }
             case TRAP_IN: {
                 std::cout << "Enter a character: ";
-                char c_in_trap;
-                std::cin.get(c_in_trap);
-                std::cout.put(c_in_trap);
                 std::cout.flush();
-                state.reg[R_R0] = static_cast<std::uint16_t>(c_in_trap);
+                char c_in_trap = 0;
+                if (read(STDIN_FILENO, &c_in_trap, 1) == 1) {
+                    std::cout.put(c_in_trap);
+                    std::cout.flush();
+                    state.reg[R_R0] = static_cast<std::uint16_t>(c_in_trap);
+                }
                 state.update_flags(R_R0);
                 break;
             }

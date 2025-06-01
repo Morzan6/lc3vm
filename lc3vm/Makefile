@@ -6,7 +6,8 @@ BUILD_DIR = build
 TEST_DIR = tests
 GTEST_FLAGS = -lgtest -lgtest_main -pthread
 
-VM_TEST_SRCS = src/ls3.cpp src/memory.cpp
+VM_SRCS = src/ls3.cpp src/memory.cpp src/terminal_input.cpp
+VM_TEST_SRCS = $(VM_SRCS) # Test sources now also include terminal_input.cpp for completeness, though not directly tested by test_basic
 
 TEST_MAIN_SRC = src/main.cpp
 
@@ -14,9 +15,9 @@ TEST_MAIN_SRC = src/main.cpp
 
 all: $(BUILD_DIR)/lc3vm
 
-$(BUILD_DIR)/lc3vm: $(VM_TEST_SRCS) src/main.cpp
+$(BUILD_DIR)/lc3vm: $(VM_SRCS) src/main.cpp
 	mkdir -p $(BUILD_DIR)
-	$(CC) $(CFLAGS) $(VM_TEST_SRCS) src/main.cpp -o $(BUILD_DIR)/lc3vm
+	$(CC) $(CFLAGS) $(VM_SRCS) src/main.cpp -o $(BUILD_DIR)/lc3vm
 
 test: $(BUILD_DIR)/test_runner
 	$(BUILD_DIR)/test_runner
