@@ -6,6 +6,6 @@ var searchData=
   ['start_5faddress_3',['start_address',['../structCodeSegment.html#ab24812b40a46bab50bd487adbbe082b0',1,'CodeSegment']]],
   ['statusflags_4',['StatusFlags',['../flags_8hpp.html#ac07b406ff87cafb1d2cd8356995f5f81',1,'flags.hpp']]],
   ['step_5',['step',['../classLC3State.html#abed4b8cae0a36e1bed65a2cb8e3d4466',1,'LC3State']]],
-  ['structure_6',['Project Structure',['../index.html#autotoc_md8',1,'']]],
-  ['swap16_7',['swap16',['../ls3_8cpp.html#a04f98d69da841663dfb280b41501b22a',1,'ls3.cpp']]]
+  ['structure_6',['Project Structure',['../index.html#autotoc_md10',1,'']]],
+  ['swap16_7',['swap16',['../lc3_8cpp.html#a04f98d69da841663dfb280b41501b22a',1,'lc3.cpp']]]
 ];

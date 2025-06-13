@@ -1,5 +1,7 @@
 <map id="keyboard.hpp" name="keyboard.hpp">
-<area shape="rect" id="Node000001" title="Defines constants and functions related to LC&#45;3 keyboard input." alt="" coords="5,5,116,31"/>
-<area shape="rect" id="Node000002" href="$memory_8cpp.html" title="Implements the Memory class methods for the LC&#45;3 virtual machine." alt="" coords="9,79,112,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,44,63,79,58,79,58,44"/>
+<area shape="rect" id="Node000001" title="Defines constants and functions related to LC&#45;3 keyboard input." alt="" coords="39,5,149,31"/>
+<area shape="rect" id="Node000002" href="$lc3_8cpp.html" title="Implements the LC3State class methods for the LC&#45;3 virtual machine." alt="" coords="5,79,73,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,43,50,80,46,77,75,40"/>
+<area shape="rect" id="Node000003" href="$memory_8cpp.html" title="Implements the Memory class methods for the LC&#45;3 virtual machine." alt="" coords="97,79,200,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="113,40,142,77,138,80,109,43"/>
 </map>

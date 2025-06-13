@@ -116,11 +116,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a387166a0b91006891f6f339e47a07191" id="r_a387166a0b91006891f6f339e47a07191"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal__input_8hpp.html#a387166a0b91006891f6f339e47a07191">enable_raw_mode</a> ()</td></tr>
-<tr class="memdesc:a387166a0b91006891f6f339e47a07191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables raw input mode for the terminal.  <br /></td></tr>
+<tr class="memdesc:a387166a0b91006891f6f339e47a07191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables raw mode for terminal input. This disables echo, canonical mode, and other terminal features to allow for direct character input.  <br /></td></tr>
 <tr class="separator:a387166a0b91006891f6f339e47a07191"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe709e6bcc6b857e4f01fd60b6428fad" id="r_abe709e6bcc6b857e4f01fd60b6428fad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal__input_8hpp.html#abe709e6bcc6b857e4f01fd60b6428fad">disable_raw_mode</a> ()</td></tr>
-<tr class="memdesc:abe709e6bcc6b857e4f01fd60b6428fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables raw input mode, restoring original terminal settings. This function should be called before the program exits to ensure the terminal is left in a usable state.  <br /></td></tr>
+<tr class="memdesc:abe709e6bcc6b857e4f01fd60b6428fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables raw mode and restores original terminal settings. This should be called before the program exits to ensure the terminal is left in a usable state.  <br /></td></tr>
 <tr class="separator:abe709e6bcc6b857e4f01fd60b6428fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a884ac346708b724a7f173a1842a4347c" id="r_a884ac346708b724a7f173a1842a4347c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal__input_8hpp.html#a884ac346708b724a7f173a1842a4347c">is_raw_mode_enabled</a> ()</td></tr>
+<tr class="memdesc:a884ac346708b724a7f173a1842a4347c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if raw mode is currently enabled.  <br /></td></tr>
+<tr class="separator:a884ac346708b724a7f173a1842a4347c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides functions to control terminal input mode (raw/canonical). </p>
@@ -142,7 +145,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Disables raw input mode, restoring original terminal settings. This function should be called before the program exits to ensure the terminal is left in a usable state. </p>
+<p>Disables raw mode and restores original terminal settings. This should be called before the program exits to ensure the terminal is left in a usable state. </p>
 
 <p class="definition">Definition at line <a class="el" href="terminal__input_8cpp_source.html#l00034">34</a> of file <a class="el" href="terminal__input_8cpp_source.html">terminal_input.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   34</span>                        {</div>
@@ -164,7 +167,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="terminal__input_8hpp_abe709e6bcc6b857e4f01fd60b6428fad_icgraph.png" border="0" usemap="#aterminal__input_8hpp_abe709e6bcc6b857e4f01fd60b6428fad_icgraph" alt=""/></div>
 <map name="aterminal__input_8hpp_abe709e6bcc6b857e4f01fd60b6428fad_icgraph" id="aterminal__input_8hpp_abe709e6bcc6b857e4f01fd60b6428fad_icgraph">
-<area shape="rect" title="Disables raw input mode, restoring original terminal settings. This function should be called before ..." alt="" coords="265,31,409,56"/>
+<area shape="rect" title="Disables raw mode and restores original terminal settings. This should be called before the program e..." alt="" coords="265,31,409,56"/>
 <area shape="rect" href="main_8cpp.html#a8bfc90b3fb9344e9caafec953baacc0b" title="Signal handler for SIGINT (Ctrl+C). Requests the LC&#45;3 VM to halt its execution gracefully." alt="" coords="108,5,217,31"/>
 <area shape="poly" title=" " alt="" coords="251,34,217,29,218,23,252,28"/>
 <area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,31,60,56"/>
@@ -190,18 +193,13 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Enables raw input mode for the terminal. </p>
-<p>In raw mode:</p><ul>
-<li>Input is unbuffered (character by character).</li>
-<li>Input is not echoed to the screen.</li>
-<li>Special character processing (like Ctrl+C for SIGINT) might be altered, so signal handling needs to be robust. <dl class="exception"><dt>Exceptions</dt><dd>
+<p>Enables raw mode for terminal input. This disables echo, canonical mode, and other terminal features to allow for direct character input. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if enabling raw mode fails. </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>if terminal attributes cannot be modified. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 <p class="definition">Definition at line <a class="el" href="terminal__input_8cpp_source.html#l00010">10</a> of file <a class="el" href="terminal__input_8cpp_source.html">terminal_input.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   10</span>                       {</div>
@@ -236,11 +234,38 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="terminal__input_8hpp_a387166a0b91006891f6f339e47a07191_icgraph.png" border="0" usemap="#aterminal__input_8hpp_a387166a0b91006891f6f339e47a07191_icgraph" alt=""/></div>
 <map name="aterminal__input_8hpp_a387166a0b91006891f6f339e47a07191_icgraph" id="aterminal__input_8hpp_a387166a0b91006891f6f339e47a07191_icgraph">
-<area shape="rect" title="Enables raw input mode for the terminal." alt="" coords="108,5,249,31"/>
+<area shape="rect" title="Enables raw mode for terminal input. This disables echo, canonical mode, and other terminal features ..." alt="" coords="108,5,249,31"/>
 <area shape="rect" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c" title="Main function for the LC&#45;3 virtual machine." alt="" coords="5,5,60,31"/>
 <area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a884ac346708b724a7f173a1842a4347c" name="a884ac346708b724a7f173a1842a4347c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a884ac346708b724a7f173a1842a4347c">&#9670;&#160;</a></span>is_raw_mode_enabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_raw_mode_enabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if raw mode is currently enabled. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if raw mode is enabled, false otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="terminal__input_8cpp_source.html#l00043">43</a> of file <a class="el" href="terminal__input_8cpp_source.html">terminal_input.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                           {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="terminal__input_8cpp.html#adf3c52c788da839a0f07a6b6176dd2f8">raw_mode_enabled</a>;</div>
+<div class="line"><span class="lineno">   45</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="terminal__input_8cpp_source.html#l00008">raw_mode_enabled</a>.</p>
 
 </div>
 </div>

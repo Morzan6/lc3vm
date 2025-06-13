@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,151,210,129,212,134,135,156"/>
 <area shape="rect" id="Node000007" href="$classMemory.html#a91cc7ffdaff15bea4ae692dccc9d6959" title="Writes a 16&#45;bit word to the specified memory address." alt="" coords="399,153,515,179"/>
 <area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="170,163,386,163,386,169,170,169"/>
-<area shape="rect" id="Node000008" href="$ls3_8cpp.html#a04f98d69da841663dfb280b41501b22a" title="Swaps the endianness of a 16&#45;bit unsigned integer. Useful for reading LC&#45;3 object files which are typ..." alt="" coords="235,204,307,229"/>
+<area shape="rect" id="Node000008" href="$lc3_8cpp.html#a04f98d69da841663dfb280b41501b22a" title="Swaps the endianness of a 16&#45;bit unsigned integer. Useful for reading LC&#45;3 object files which are typ..." alt="" coords="235,204,307,229"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="135,176,222,201,221,206,134,181"/>
 <area shape="rect" id="Node000003" href="$classMemory.html#a7d7c6287a71c0c5c1bab82423d1de6d0" title="Reads a 16&#45;bit word from the specified memory address. Handles memory&#45;mapped I/O for keyboard status ..." alt="" coords="401,5,513,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="285,100,322,71,371,41,390,33,392,38,373,46,325,75,288,105"/>

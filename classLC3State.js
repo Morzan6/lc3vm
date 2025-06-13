@@ -6,6 +6,7 @@ var classLC3State =
     [ "disassemble_all", "classLC3State.html#afbcac5fbedee43b6a5498c88aaec4ecc", null ],
     [ "get_register_value", "classLC3State.html#a9c1af4dd579de5d388518f654b958f06", null ],
     [ "ins", "classLC3State.html#a608043abe659369b614216e26c63aae1", null ],
+    [ "is_running", "classLC3State.html#a08036024fe6d035cb9a533e923f00879", null ],
     [ "load_image", "classLC3State.html#ad4e44daa80534137d415ab31e970fa9b", null ],
     [ "read_memory", "classLC3State.html#ab42c2aeb6d3b5f10503a42bd22a58979", null ],
     [ "request_halt", "classLC3State.html#ad12c3ef681a4edd04a2284b03f48ddb9", null ],

@@ -134,11 +134,36 @@ Dependencies</h1>
 <li><code>make</code></li>
 <li>Google Test (<code>libgtest-dev</code> on Debian/Ubuntu systems)</li>
 <li><code>doxygen</code> (optional, for generating documentation)</li>
-<li><code>graphviz</code> (optional, for Doxygen diagrams)</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Building the Project</h1>
-<p>The project uses a Makefile located in the <code>lc3vm/</code> directory.</p>
+<p>The project can be built using either CMake or Make. Choose your preferred method below.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Using CMake</h2>
+<ol type="1">
+<li><p class="startli"><b>Create a build directory and navigate to it</b>:</p>
+<div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
+</div><!-- fragment --></li>
+<li><p class="startli"><b>Generate build files</b>:</p>
+<div class="fragment"><div class="line">cmake ..</div>
+</div><!-- fragment --></li>
+<li><p class="startli"><b>Build the project</b>:</p>
+<div class="fragment"><div class="line">cmake --build .</div>
+</div><!-- fragment --><p class="startli">This will create the following executables in the <code>build</code> directory:</p><ul>
+<li><code>lc3vm</code>: The main VM executable</li>
+<li><code>test_runner</code>: The test executable</li>
+</ul>
+</li>
+<li><p class="startli"><b>Run tests</b> (optional):</p>
+<div class="fragment"><div class="line">./test_runner</div>
+</div><!-- fragment --></li>
+<li><p class="startli"><b>Generate documentation</b> (optional):</p>
+<div class="fragment"><div class="line">cmake --build . --target docs</div>
+</div><!-- fragment --></li>
+</ol>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Using Make</h2>
 <ol type="1">
 <li><p class="startli"><b>Navigate to the <code>lc3vm</code> directory</b>:</p>
 <div class="fragment"><div class="line">cd lc3vm</div>
@@ -152,11 +177,11 @@ Building the Project</h1>
 <div class="fragment"><div class="line">make clean</div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Running the VM</h1>
 <p>To run an LC-3 object file:</p>
 <div class="fragment"><div class="line">./lc3vm/build/lc3vm path/to/your_program.obj [path/to/another_program.obj ...]</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
 Disassembling Object Files</h1>
 <p>The LC-3 VM can also disassemble <code>.obj</code> files, showing you the LC-3 assembly instructions corresponding to the machine code in the file. This is useful for inspecting programs or debugging.</p>
 <p><b>How to use:</b></p>
@@ -164,11 +189,11 @@ Disassembling Object Files</h1>
 <div class="fragment"><div class="line">./lc3vm/build/lc3vm -d path/to/your_program.obj</div>
 </div><!-- fragment --><p>Or for multiple files:</p>
 <div class="fragment"><div class="line">./lc3vm/build/lc3vm --disassemble program1.obj program2.obj</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
 Running Tests</h1>
 <p>To compile and run the unit tests (from within the <code>lc3vm</code> directory):</p>
 <div class="fragment"><div class="line">make test</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
 Project Structure</h1>
 <div class="fragment"><div class="line">.</div>
 <div class="line">├── .github/            # GitHub Actions workflows</div>

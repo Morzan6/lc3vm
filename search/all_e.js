@@ -21,6 +21,6 @@ var searchData=
   ['request_5fhalt_18',['request_halt',['../classLC3State.html#ad12c3ef681a4edd04a2284b03f48ddb9',1,'LC3State']]],
   ['run_19',['run',['../classLC3State.html#a926721399e17cfc81701d094fbb64d4f',1,'LC3State']]],
   ['running_20',['running',['../classLC3State.html#ab1b3d63525bd837dc7f987d62ea02876',1,'LC3State']]],
-  ['running_20tests_21',['Running Tests',['../index.html#autotoc_md7',1,'']]],
-  ['running_20the_20vm_22',['Running the VM',['../index.html#autotoc_md5',1,'']]]
+  ['running_20tests_21',['Running Tests',['../index.html#autotoc_md9',1,'']]],
+  ['running_20the_20vm_22',['Running the VM',['../index.html#autotoc_md7',1,'']]]
 ];
