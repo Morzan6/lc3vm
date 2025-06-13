@@ -32,8 +32,9 @@ struct CodeSegment {
  * to load programs, run the VM, step through instructions, and inspect/modify its state.
  */
 class LC3State {
+    public:
+        Memory memory;  // Made public for testing
     private:
-        Memory memory;
         /**
          * @brief Array of 16-bit registers.
          * This array holds the values of the 16 registers in the LC-3 architecture.
@@ -111,6 +112,12 @@ class LC3State {
          * Sets the internal running flag to false.
          */
         void request_halt() { running = false; }
+
+        /**
+         * @brief Checks if the VM is currently running.
+         * @return true if the VM is running, false if it has halted.
+         */
+        bool is_running() const { return running; }
 
         // Test helper methods
         /**

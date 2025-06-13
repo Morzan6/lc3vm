@@ -7,22 +7,24 @@
  */
 
 /**
- * @brief Enables raw input mode for the terminal.
- * 
- * In raw mode:
- * - Input is unbuffered (character by character).
- * - Input is not echoed to the screen.
- * - Special character processing (like Ctrl+C for SIGINT) might be altered,
- *   so signal handling needs to be robust.
- * @throw std::runtime_error if enabling raw mode fails.
+ * @brief Enables raw mode for terminal input.
+ * This disables echo, canonical mode, and other terminal features
+ * to allow for direct character input.
+ * @throw std::runtime_error if terminal attributes cannot be modified.
  */
 void enable_raw_mode();
 
 /**
- * @brief Disables raw input mode, restoring original terminal settings.
- * This function should be called before the program exits to ensure the
- * terminal is left in a usable state.
+ * @brief Disables raw mode and restores original terminal settings.
+ * This should be called before the program exits to ensure the terminal
+ * is left in a usable state.
  */
 void disable_raw_mode();
+
+/**
+ * @brief Checks if raw mode is currently enabled.
+ * @return true if raw mode is enabled, false otherwise.
+ */
+bool is_raw_mode_enabled();
 
 #endif // LC3_TERMINAL_INPUT_H 

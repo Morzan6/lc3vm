@@ -38,11 +38,49 @@ To build and run this project, you will need:
 * `make`
 * Google Test (`libgtest-dev` on Debian/Ubuntu systems)
 * `doxygen` (optional, for generating documentation)
-* `graphviz` (optional, for Doxygen diagrams)
 
 ## Building the Project
 
-The project uses a Makefile located in the `lc3vm/` directory.
+The project can be built using either CMake or Make. Choose your preferred method below.
+
+### Using CMake
+
+1. **Create a build directory and navigate to it**:
+
+    ```bash
+    mkdir build
+    cd build
+    ```
+
+2. **Generate build files**:
+
+    ```bash
+    cmake ..
+    ```
+
+3. **Build the project**:
+
+    ```bash
+    cmake --build .
+    ```
+
+    This will create the following executables in the `build` directory:
+    * `lc3vm`: The main VM executable
+    * `test_runner`: The test executable
+
+4. **Run tests** (optional):
+
+    ```bash
+    ./test_runner
+    ```
+
+5. **Generate documentation** (optional):
+
+    ```bash
+    cmake --build . --target docs
+    ```
+
+### Using Make
 
 1. **Navigate to the `lc3vm` directory**:
 

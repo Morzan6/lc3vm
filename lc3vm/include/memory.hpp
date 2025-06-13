@@ -24,6 +24,13 @@ class Memory {
          * Stores 65536 16-bit words.
          */
         std::uint16_t memory[MEMORY_MAX];
+
+        /**
+         * @brief Flag to indicate if we're in test mode.
+         * When true, keyboard input is simulated using memory values.
+         */
+        bool test_mode = false;
+
         /**
          * @brief Reads a 16-bit word from the specified memory address.
          * Handles memory-mapped I/O for keyboard status (MR_KBSR) and 
