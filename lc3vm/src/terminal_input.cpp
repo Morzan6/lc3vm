@@ -38,4 +38,8 @@ void disable_raw_mode() {
         }
         raw_mode_enabled = false;
     }
+}
+
+bool is_raw_mode_enabled() {
+    return raw_mode_enabled;
 } 

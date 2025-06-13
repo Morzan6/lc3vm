@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y g++ make cmake libgtest-dev
+        sudo apt-get install -y g++ make cmake libgtest-dev lcov gcovr
 
     - name: Build and install Google Test
       run: |
@@ -32,12 +32,12 @@ jobs:
 
     - name: Run tests
       working-directory: ./lc3vm
-      run: make test 
+      run: make coverage
 
   deploy-docs:
     needs: build_and_test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push' # Deploy only on push to main
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     permissions:
       contents: write 
       pages: write    

@@ -1,5 +1,5 @@
 /**
- * @file ls3.cpp
+ * @file lc3.cpp
  * @brief Implements the LC3State class methods for the LC-3 virtual machine.
  * 
  * This file contains the definitions for the LC-3 instruction set, trap handlers,
@@ -18,6 +18,7 @@
 #include <array>
 #include "traps.hpp"
 #include "flags.hpp"
+#include "keyboard.hpp"
 #include <unistd.h>
 #include <sstream>
 #include <iomanip>
@@ -135,58 +136,74 @@ void LC3State::ins(LC3State& state, std::uint16_t instr) {
         switch (instr & 0xFF) {
             case TRAP_GETC:
                 {
-                    char c_in = 0;
-                    if (read(STDIN_FILENO, &c_in, 1) == 1) {
-                        state.reg[R_R0] = static_cast<std::uint16_t>(c_in);
+                    if (state.memory.test_mode) {
+                        state.reg[R_R0] = state.memory.read(Keyboard::MR_KBDR);
+                    } else {
+                        char c_in = 0;
+                        if (read(STDIN_FILENO, &c_in, 1) == 1) {
+                            state.reg[R_R0] = static_cast<std::uint16_t>(c_in);
+                        }
                     }
                 }
                 state.update_flags(R_R0);
                 break;
             case TRAP_OUT:
-                std::cout.put(static_cast<char>(state.reg[R_R0]));
-                std::cout.flush();
+                if (!state.memory.test_mode) {
+                    std::cout.put(static_cast<char>(state.reg[R_R0]));
+                    std::cout.flush();
+                }
                 break;
             case TRAP_PUTS: {
-                std::uint16_t current_char_addr = state.reg[R_R0];
-                std::uint16_t val = state.memory.read(current_char_addr);
-                while (val != 0) {
-                    std::cout.put(static_cast<char>(val));
-                    current_char_addr++;
-                    val = state.memory.read(current_char_addr);
+                if (!state.memory.test_mode) {
+                    std::uint16_t current_char_addr = state.reg[R_R0];
+                    std::uint16_t val = state.memory.read(current_char_addr);
+                    while (val != 0) {
+                        std::cout.put(static_cast<char>(val));
+                        current_char_addr++;
+                        val = state.memory.read(current_char_addr);
+                    }
+                    std::cout.flush();
                 }
-                std::cout.flush();
                 break;
             }
             case TRAP_IN: {
-                std::cout << "Enter a character: ";
-                std::cout.flush();
-                char c_in_trap = 0;
-                if (read(STDIN_FILENO, &c_in_trap, 1) == 1) {
-                    std::cout.put(c_in_trap);
+                if (state.memory.test_mode) {
+                    state.reg[R_R0] = state.memory.read(Keyboard::MR_KBDR);
+                } else {
+                    std::cout << "Enter a character: ";
                     std::cout.flush();
-                    state.reg[R_R0] = static_cast<std::uint16_t>(c_in_trap);
+                    char c_in_trap = 0;
+                    if (read(STDIN_FILENO, &c_in_trap, 1) == 1) {
+                        std::cout.put(c_in_trap);
+                        std::cout.flush();
+                        state.reg[R_R0] = static_cast<std::uint16_t>(c_in_trap);
+                    }
                 }
                 state.update_flags(R_R0);
                 break;
             }
             case TRAP_PUTSP: {
-                std::uint16_t current_addr = state.reg[R_R0];
-                std::uint16_t word = state.memory.read(current_addr);
-                while (word != 0) {
-                    char char1 = word & 0xFF;
-                    std::cout.put(char1);
-                    char char2 = (word >> 8) & 0xFF;
-                    if (char2) {
-                        std::cout.put(char2);
+                if (!state.memory.test_mode) {
+                    std::uint16_t current_addr = state.reg[R_R0];
+                    std::uint16_t word = state.memory.read(current_addr);
+                    while (word != 0) {
+                        char char1 = word & 0xFF;
+                        std::cout.put(char1);
+                        char char2 = (word >> 8) & 0xFF;
+                        if (char2) {
+                            std::cout.put(char2);
+                        }
+                        current_addr++;
+                        word = state.memory.read(current_addr);
                     }
-                    current_addr++;
-                    word = state.memory.read(current_addr);
+                    std::cout.flush();
                 }
-                std::cout.flush();
                 break;
             }
             case TRAP_HALT:
-                std::cout << "HALT" << std::endl;
+                if (!state.memory.test_mode) {
+                    std::cout << "HALT" << std::endl;
+                }
                 state.running = false;
                 break;
             default:

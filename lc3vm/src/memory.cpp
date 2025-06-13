@@ -31,6 +31,9 @@ std::uint16_t check_key() {
 
 std::uint16_t Memory::read(std::uint16_t address) {
     if (address == Keyboard::MR_KBSR) {
+        if (test_mode) {
+            return memory[Keyboard::MR_KBSR];
+        }
         if (check_key()) {
             memory[Keyboard::MR_KBSR] = (1 << 15);
             char c_in;
