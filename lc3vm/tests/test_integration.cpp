@@ -73,53 +73,42 @@ TEST_F(IntegrationTest, MemoryKeyboardStatus) {
 }
 
 TEST_F(IntegrationTest, MemoryKeyboardNonTestMode) {
-    // In test mode, we need to explicitly set and clear the keyboard status
     vm.memory.test_mode = true;
     
-    // Test keyboard status when no input is available
     vm.write_memory(Keyboard::MR_KBSR, 0x0000);
     EXPECT_EQ(vm.read_memory(Keyboard::MR_KBSR), 0x0000);
     
-    // Test keyboard status and data after input
     simulate_keyboard_input('T');
     EXPECT_EQ(vm.read_memory(Keyboard::MR_KBSR), 0x8000);
     EXPECT_EQ(vm.read_memory(Keyboard::MR_KBDR), 'T');
-    
-    // Test keyboard status after input is consumed
+
     vm.write_memory(Keyboard::MR_KBSR, 0x0000);
     EXPECT_EQ(vm.read_memory(Keyboard::MR_KBSR), 0x0000);
 }
 
 TEST_F(IntegrationTest, MemoryKeyboardMultipleInputs) {
-    // In test mode, we need to explicitly set and clear the keyboard status
     vm.memory.test_mode = true;
     
     const char inputs[] = "ABC";
     for (char input : inputs) {
-        // Clear keyboard status before each input
         vm.write_memory(Keyboard::MR_KBSR, 0x0000);
         EXPECT_EQ(vm.read_memory(Keyboard::MR_KBSR), 0x0000);
         
-        // Simulate input
         simulate_keyboard_input(input);
         EXPECT_EQ(vm.read_memory(Keyboard::MR_KBSR), 0x8000);
         EXPECT_EQ(vm.read_memory(Keyboard::MR_KBDR), input);
         
-        // Clear keyboard status after input is consumed
         vm.write_memory(Keyboard::MR_KBSR, 0x0000);
         EXPECT_EQ(vm.read_memory(Keyboard::MR_KBSR), 0x0000);
     }
 }
 
 TEST_F(IntegrationTest, MemoryKeyboardTimeout) {
-    // In test mode, we need to explicitly set and clear the keyboard status
     vm.memory.test_mode = true;
     
-    // Test keyboard status with no input
     vm.write_memory(Keyboard::MR_KBSR, 0x0000);
     EXPECT_EQ(vm.read_memory(Keyboard::MR_KBSR), 0x0000);
     
-    // Test multiple reads with no input
     for (int i = 0; i < 5; i++) {
         EXPECT_EQ(vm.read_memory(Keyboard::MR_KBSR), 0x0000);
     }
