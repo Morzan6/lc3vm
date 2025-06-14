@@ -45,17 +45,16 @@ if (DOXYGEN_FOUND)
     doxygen_add_docs(docs Doxyfile)
 endif()
 
-# Add coverage target
 if(ENABLE_COVERAGE)
     find_program(GCOVR_PATH gcovr)
     if(GCOVR_PATH)
         add_custom_target(coverage
-            COMMAND ${CMAKE_COMMAND} -E echo "\nCoverage Summary:"
+            COMMAND ${CMAKE_COMMAND} -E echo "Coverage Summary:"
             COMMAND ${GCOVR_PATH} --root ${CMAKE_SOURCE_DIR}
                     --exclude "tests/.*"
                     --exclude "build/.*"
                     --print-summary
-            COMMAND ${CMAKE_COMMAND} -E echo "\nCoverage report generated at ${CMAKE_BINARY_DIR}/coverage/index.html"
+            COMMAND ${CMAKE_COMMAND} -E echo "Coverage report generated"
             WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
             COMMENT "Generating code coverage report..."
         )

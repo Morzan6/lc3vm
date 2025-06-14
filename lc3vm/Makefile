@@ -1,13 +1,10 @@
 CC = /usr/bin/g++
 
-# Coverage flags
 COVERAGE_FLAGS = -g -O0 --coverage
 COVERAGE_LDFLAGS = --coverage
 
-# Default CFLAGS without coverage
 CFLAGS = -Wall -Wextra -std=c++17 -Iinclude -O2 -g
 
-# Coverage-enabled CFLAGS
 COVERAGE_CFLAGS = $(CFLAGS) $(COVERAGE_FLAGS)
 
 BUILD_DIR = build
@@ -51,7 +48,6 @@ docs:
 	@echo "Generating documentation with Doxygen..."
 	@doxygen Doxyfile
 
-# Coverage targets
 coverage: CFLAGS := $(COVERAGE_CFLAGS)
 coverage: LDFLAGS := $(COVERAGE_LDFLAGS)
 coverage: clean test
@@ -62,7 +58,6 @@ coverage: clean test
 		--exclude "tests/.*" \
 		--exclude "build/.*" \
 		--print-summary
-	@echo "Coverage report generated at $(BUILD_DIR)/coverage/index.html"
 
 clean:
 	@echo "Cleaning build directory..."
